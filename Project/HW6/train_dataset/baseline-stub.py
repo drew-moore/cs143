@@ -52,20 +52,21 @@ def baseline(qbow, sentences, stopwords):
     # Sort answers from smallest to largest by default, so reverse it
     answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
 
-	# Return the best answer
+    # Return the best answer
     best_answer = (answers[0])[1]
     return best_answer
 
 if __name__ == '__main__':
-	text_file = "fables-01.sch"
+    text_file = "fables-01.sch"
 
-	stopwords = set(nltk.corpus.stopwords.words("english"))
-	text = read_file(text_file)
-	question = "Where was the crow sitting?"
+    stopwords = set(nltk.corpus.stopwords.words("english"))
+    text = read_file(text_file)
+    question = "Where was the crow sitting?"
 
-	qbow = get_bow(get_sentences(question)[0], stopwords)
-	sentences = get_sentences(text)
+    qbow = get_bow(get_sentences(question)[0], stopwords)
+    sentences = get_sentences(text)
 
-	answer = baseline(qbow, sentences, stopwords)
+    answer = baseline(qbow, sentences, stopwords)
+    print(qbow)
 
-	print(" ".join(t[0] for t in answer))
+    print(" ".join(t[0] for t in answer))

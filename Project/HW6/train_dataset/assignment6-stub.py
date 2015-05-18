@@ -1,11 +1,18 @@
 #!/usr/bin/env python
 
-import zipfile, argparse, os
+import zipfile, argparse, os, nltk, operator
 from collections import defaultdict
 
 ###############################################################################
 ## Utility Functions ##########################################################
 ###############################################################################
+
+def read_file(filename):
+    fh = open(filename, 'r')
+    text = fh.read()
+    fh.close()
+
+    return text
 
 # This method takes as input the file extension of the set of files you want to open
 # and processes the data accordingly
@@ -47,6 +54,64 @@ def getQA(content, dataset_dict):
 ## Question Answering Functions ###############################################
 ###############################################################################
 
+def create_filename(parseCurrQID):
+    currFileName = parseCurrQID[0] + "-" + parseCurrQID[1]
+
+    currType = question[1]["Type"]
+
+    if currType == "Story":
+        currFileName = currFileName + ".story"
+    else:
+        currFileName = currFileName + ".sch"
+
+    return  currFileName
+
+###############################################################################
+## Added Baseline Functions ###################################################
+###############################################################################
+
+
+# The standard NLTK pipeline for POS tagging a document
+def get_sentences(text):
+    sentences = nltk.sent_tokenize(text)
+    sentences = [nltk.word_tokenize(sent) for sent in sentences]
+    sentences = [nltk.pos_tag(sent) for sent in sentences]
+
+    return sentences
+
+def get_bow(tagged_tokens, stopwords):
+	return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
+
+def find_phrase(tagged_tokens, qbow):
+    for i in range(len(tagged_tokens) - 1, 0, -1):
+        word = (tagged_tokens[i])[0]
+        if word in qbow:
+            return tagged_tokens[i+1:]
+
+# qtokens: is a list of pos tagged question tokens with SW removed
+# sentences: is a list of pos tagged story sentences
+# stopwords is a set of stopwords
+def baseline(qbow, sentences, stopwords):
+    # Collect all the candidate answers
+    answers = []
+    for sent in sentences:
+        # A list of all the word tokens in the sentence
+        sbow = get_bow(sent, stopwords)
+
+        # Count the # of overlapping words between the Q and the A
+        # & is the set intersection operator
+        overlap = len(qbow & sbow)
+
+        answers.append((overlap, sent))
+
+    # Sort the results by the first element of the tuple (i.e., the count)
+    # Sort answers from smallest to largest by default, so reverse it
+    answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
+
+    # Return the best answer
+    best_answer = (answers[0])[1]
+    return best_answer
+
 
 
 ###############################################################################
@@ -61,6 +126,44 @@ if __name__ == '__main__':
     questions = getData(".questions") # returns a dict of questionIds
     answers = getData(".answers") # returns a dict of questionIds
 
+    file = open("response_file.txt", 'w', encoding="utf-8")
+
+    stopwords = set(nltk.corpus.stopwords.words("english"))
+
+    outputDictFables = {}
+    outputDictBlogs = {}
+
+    for question in questions.items():
+
+        parseCurrQID = question[0].split("-")
+        currFileName = create_filename(parseCurrQID)
+        currQ = question[1]["Question"]
+        text = read_file(currFileName)
+
+        qbow = get_bow(get_sentences(currQ)[0], stopwords)
+        sentences = get_sentences(text)
+
+        answer = baseline(qbow, sentences, stopwords)
+        finalAnswer = " ".join(t[0] for t in answer if t not in stopwords)
+
+        if parseCurrQID[0] == "fables":
+            outputDictFables.update({question[0]:finalAnswer})
+        else:
+            outputDictBlogs.update({question[0]:finalAnswer})
+
     # read in other data, ".story.par", "story.dep", ".sch.par", ".sch.dep", ".questions.par", ".questions.dep"
+
+    # outputDict = sorted(outputDictFables.items(),key=lambda
+    #          item: item[0].split("-")[1])
+
+    outputDict = sorted(outputDictFables.items())
+    for response in outputDict:
+        file.write("QuestionID: " + response[0] + "\n"
+                    "Answer: " + response[1] + "\n\n")
+
+    outputDict = sorted(outputDictBlogs.items())
+    for response in outputDict:
+        file.write("QuestionID: " + response[0] + "\n"
+                    "Answer: " + response[1] + "\n\n")
 
     # create methods to perform information extraction and question and answering
