@@ -30,7 +30,7 @@ def getData(file_extension):
 
             # question and answer files and cumulatively add them to the dataset_dict
             elif file_extension == ".answers" or file_extension == ".questions":
-                getQA(open(filename, 'rU'), dataset_dict)
+                getQA(open(filename, 'rU', encoding="latin1"), dataset_dict)
 
     return dataset_dict
 
@@ -80,7 +80,7 @@ def get_sentences(text):
     return sentences
 
 def get_bow(tagged_tokens, stopwords):
-	return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
+    return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
 
 def find_phrase(tagged_tokens, qbow):
     for i in range(len(tagged_tokens) - 1, 0, -1):
@@ -112,7 +112,19 @@ def baseline(qbow, sentences, stopwords):
     best_answer = (answers[0])[1]
     return best_answer
 
+# wrote this in a way that it should generalize to be usable with the next two assignments, assuming
+# they'll continue to want the results sorted numerically by story_id then by question_id. We just have to make sure
+# to pass the arrays in in the order they want, as the order they want those appears random so far
+def write_results(dicts, file):
+    for dic in dicts:
+        arrs = [entry.split('-') for entry in dic]
 
+        for story_type in set([arr[0] for arr in arrs]):
+            for story_id in sorted(set([arr[1] for arr in arrs if arr[0] == story_type])):
+                questions = sorted([arr for arr in arrs if arr[0] == story_type and arr[1] == story_id], key=lambda arr:int(arr[2]))
+                questions = ['-'.join(arr) for arr in questions]
+                responses = [(question, dic[question]) for question in questions]
+                file.write('\n\n'.join(['\n'.join(['QuestionId:{0}'.format(response[0]), 'Answer:{0}'.format(response[1])])for response in responses]))
 
 ###############################################################################
 ## Program Entry Point ########################################################
@@ -156,14 +168,10 @@ if __name__ == '__main__':
     # outputDict = sorted(outputDictFables.items(),key=lambda
     #          item: item[0].split("-")[1])
 
-    outputDict = sorted(outputDictFables.items())
-    for response in outputDict:
-        file.write("QuestionID: " + response[0] + "\n"
-                    "Answer: " + response[1] + "\n\n")
 
-    outputDict = sorted(outputDictBlogs.items())
-    for response in outputDict:
-        file.write("QuestionID: " + response[0] + "\n"
-                    "Answer: " + response[1] + "\n\n")
+    write_results([outputDictFables, outputDictBlogs], file)
+
+    file.close()
+
 
     # create methods to perform information extraction and question and answering
