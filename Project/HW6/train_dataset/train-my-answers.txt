@@ -17,7 +17,9 @@ QuestionId:fables-01-6
 Answer:There once was a crow .
 
 QuestionId:fables-01-7
-Answer:The crow felt that the fox had flattered her and cawed loudly in order for she to show him that she was able to sing .QuestionId:fables-02-1
+Answer:The crow felt that the fox had flattered her and cawed loudly in order for she to show him that she was able to sing .
+
+QuestionId:fables-02-1
 Answer:A Lion watched a fat Bull feeding in a meadow , and his mouth watered when he thought of the royal feast he would make , but he did not dare to attack him , for he was afraid of his sharp horns .
 
 QuestionId:fables-02-2
@@ -48,7 +50,9 @@ QuestionId:fables-02-10
 Answer:The lion did n't attack the bull because the lion feared sharp every horn of the bull .
 
 QuestionId:fables-02-11
-Answer:A lion watched the bull and salivated because the lion wanted to eat the bull .QuestionId:blogs-01-1
+Answer:A lion watched the bull and salivated because the lion wanted to eat the bull .
+
+QuestionId:blogs-01-1
 Answer:A summit meeting named G20 summit started on eventful today .
 
 QuestionId:blogs-01-2
@@ -86,3 +90,4 @@ Answer:As things got worse tear gas and bean bag bullets were fired at the riote
 
 QuestionId:blogs-01-13
 Answer:Today was a very eventful work day .
+

@@ -125,6 +125,7 @@ def write_results(dicts, file):
                 questions = ['-'.join(arr) for arr in questions]
                 responses = [(question, dic[question]) for question in questions]
                 file.write('\n\n'.join(['\n'.join(['QuestionId:{0}'.format(response[0]), 'Answer:{0}'.format(response[1])])for response in responses]))
+                file.write('\n\n')
 
 ###############################################################################
 ## Program Entry Point ########################################################
@@ -153,10 +154,12 @@ if __name__ == '__main__':
         text = read_file(currFileName)
 
         qbow = get_bow(get_sentences(currQ)[0], stopwords)
-        sentences = get_sentences(text)
 
+        sentences = get_sentences(text)
         answer = baseline(qbow, sentences, stopwords)
+
         finalAnswer = " ".join(t[0] for t in answer if t not in stopwords)
+
 
         if parseCurrQID[0] == "fables":
             outputDictFables.update({question[0]:finalAnswer})
@@ -165,8 +168,6 @@ if __name__ == '__main__':
 
     # read in other data, ".story.par", "story.dep", ".sch.par", ".sch.dep", ".questions.par", ".questions.dep"
 
-    # outputDict = sorted(outputDictFables.items(),key=lambda
-    #          item: item[0].split("-")[1])
 
 
     write_results([outputDictFables, outputDictBlogs], file)
