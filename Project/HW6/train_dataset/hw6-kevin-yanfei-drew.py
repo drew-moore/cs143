@@ -138,7 +138,7 @@ if __name__ == '__main__':
     questions = getData(".questions") # returns a dict of questionIds
     answers = getData(".answers") # returns a dict of questionIds
 
-    file = open("response_file.txt", 'w', encoding="utf-8")
+    file = open("train-my-answers.txt", 'w', encoding="utf-8")
 
     stopwords = set(nltk.corpus.stopwords.words("english"))
 
