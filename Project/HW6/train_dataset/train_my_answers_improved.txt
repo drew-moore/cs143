@@ -1,0 +1,93 @@
+QuestionID: fables-01-1
+Answer:A Crow was sitting on a branch of a tree with a piece of cheese in her beak when a Fox observed her and set his wits to work to discover some way of getting the cheese .
+
+QuestionID: fables-01-2
+Answer:A Crow was sitting on a branch of a tree with a piece of cheese in her beak when a Fox observed her and set his wits to work to discover some way of getting the cheese .
+
+QuestionID: fables-01-3
+Answer:A Crow was sitting on a branch of a tree with a piece of cheese in her beak when a Fox observed her and set his wits to work to discover some way of getting the cheese . Coming and standing under the tree he looked up and said , `` What a noble bird I see above me ! Her beauty is without equal , the hue of her plumage exquisite . If only her voice is as sweet as her looks are fair , she ought without doubt to be Queen of the Birds . '' The Crow was hugely flattered by this , and just to show the Fox that she could sing she gave a loud caw . Down came the cheese , of course , and the Fox , snatching it up , said , `` You have a voice , madam , I see : what you want is wits . ''
+
+QuestionID: fables-01-4
+Answer:A fox observed the crow and tried to discover how to get the cheese .
+
+QuestionID: fables-01-5
+Answer:A fox observed the crow and tried to discover how to get the cheese .
+
+QuestionID: fables-01-6
+Answer:There once was a crow .
+
+QuestionID: fables-01-7
+Answer:The crow felt that the fox had flattered her and cawed loudly in order for she to show him that she was able to sing .
+
+QuestionID: fables-02-1
+Answer:A Lion watched a fat Bull feeding in a meadow , and his mouth watered when he thought of the royal feast he would make , but he did not dare to attack him , for he was afraid of his sharp horns .
+
+QuestionID: fables-02-2
+Answer:The Bull was foolish enough to be persuaded by this flattery to have his horns cut off ; and , having now lost his only means of defense , fell an easy prey to the Lion .
+
+QuestionID: fables-02-3
+Answer:There once was a fat bull .
+
+QuestionID: fables-02-4
+Answer:The bull was grazing in a meadow .
+
+QuestionID: fables-02-5
+Answer:A lion watched the bull and salivated because the lion wanted to eat the bull .
+
+QuestionID: fables-02-6
+Answer:The lion walked toward the bull and began to feign that the lion was friendly .
+
+QuestionID: fables-02-7
+Answer:But , my dear friend , what in the world makes you wear those ugly horns ?
+
+QuestionID: fables-02-8
+Answer:There once was a fat bull . The bull was grazing in a meadow . A lion watched the bull and salivated because the lion wanted to eat the bull . The lion did n't attack the bull because the lion feared sharp every horn of the bull . The lion began to be hungry and decided to attempt to kill the bull . The lion planned to trick the bull because the lion was n't able to fight the bull . The lion walked toward the bull and began to feign that the lion was friendly . The lion said to the bull that the lion admired the body of the bull , admired the head of the bull , he admired every shoulder of the bull and admired every thigh of the bull . The lion advised the bull to remove every horn of the bull because every horn of the bull was ugly . The lion succeeded in persuading the bull to remove every horn of the bull . The lion ate the bull , and the bull began to be defenseless .
+
+QuestionID: fables-02-9
+Answer:A lion watched the bull and salivated because the lion wanted to eat the bull .
+
+QuestionID: fables-02-10
+Answer:The lion did n't attack the bull because the lion feared sharp every horn of the bull .
+
+QuestionID: fables-02-11
+Answer:The lion did n't attack the bull because the lion feared sharp every horn of the bull .
+
+QuestionID: blogs-01-1
+Answer:A summit meeting named G20 summit started on eventful today .
+
+QuestionID: blogs-01-2
+Answer:A summit meeting named G20 summit started on eventful today .
+
+QuestionID: blogs-01-3
+Answer:G20 summit happened annually .
+
+QuestionID: blogs-01-4
+Answer:The people burned a police car and threw a thing at a police .
+
+QuestionID: blogs-01-5
+Answer:The people rebelled and created riot .
+
+QuestionID: blogs-01-6
+Answer:The people rebelled and created riot .
+
+QuestionID: blogs-01-7
+Answer:The people burned a police car and threw a thing at a police .
+
+QuestionID: blogs-01-8
+Answer:The people burned a police car and threw a thing at a police .
+
+QuestionID: blogs-01-9
+Answer:The people burned a police car and threw a thing at a police .
+
+QuestionID: blogs-01-10
+Answer:Police cars were burned and things were thrown at cops .
+
+QuestionID: blogs-01-11
+Answer:As things got worse tear gas and bean bag bullets were fired at the rioters while they smash windows of stores .
+
+QuestionID: blogs-01-12
+Answer:As things got worse tear gas and bean bag bullets were fired at the rioters while they smash windows of stores .
+
+QuestionID: blogs-01-13
+Answer:As things got worse tear gas and bean bag bullets were fired at the rioters while they smash windows of stores .
+

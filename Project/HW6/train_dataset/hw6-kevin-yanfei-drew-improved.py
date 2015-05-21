@@ -2,6 +2,8 @@
 
 import zipfile, argparse, os, nltk, operator
 from collections import defaultdict
+from nltk.stem import WordNetLemmatizer
+from nltk.stem.porter import PorterStemmer
 
 ###############################################################################
 ## Utility Functions ##########################################################
@@ -31,6 +33,7 @@ def getData(file_extension):
             # question and answer files and cumulatively add them to the dataset_dict
             elif file_extension == ".answers" or file_extension == ".questions":
                 getQA(open(filename, 'rU', encoding="latin1"), dataset_dict)
+                #getQA(open(filename, 'rU'), dataset_dict)
 
     return dataset_dict
 
@@ -79,8 +82,34 @@ def get_sentences(text):
 
     return sentences
 
+def lemmatization(word, tag):
+    if tag in ('VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ'):
+       pos = 'v'
+    elif tag in ('JJ', 'JJR', 'JJS'):
+       pos = 'a'
+    elif tag in ('RB','RBR', 'RBS'):
+       pos = 'r'   
+    else:    
+       pos = 'n'   
+    return WordNetLemmatizer().lemmatize(word, pos)
+
+# ADJ, ADJ_SAT, ADV, NOUN, VERB = 'a', 's', 'r', 'n', 'v'
+
 def get_bow(tagged_tokens, stopwords):
-    return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
+    bow = []
+    for token in tagged_tokens:
+        token_lower = token[0].lower()
+        #print(token_lower)
+        if token_lower not in stopwords:
+           tag = token[1]
+           #print(tag)
+           token_stem = PorterStemmer().stem(token_lower)
+           token_lemma = lemmatization(token_stem, tag)         
+           bow.append(token_lemma)
+
+    return set(bow)
+
+    #return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
 
 def find_phrase(tagged_tokens, qbow):
     for i in range(len(tagged_tokens) - 1, 0, -1):
@@ -108,8 +137,13 @@ def baseline(qbow, sentences, stopwords):
     # Sort answers from smallest to largest by default, so reverse it
     answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
 
+    # if no sentence has overlapped words, return the entire story
+    if answers[0][0] == 0:
+       best_answer = [sent for sentence in sentences for sent in sentence]
     # Return the best answer
-    best_answer = (answers[0])[1]
+    else:
+       best_answer = (answers[0])[1]
+
     return best_answer
 
 # wrote this in a way that it should generalize to be usable with the next two assignments, assuming
@@ -124,7 +158,7 @@ def write_results(dicts, file):
                 questions = sorted([arr for arr in arrs if arr[0] == story_type and arr[1] == story_id], key=lambda arr:int(arr[2]))
                 questions = ['-'.join(arr) for arr in questions]
                 responses = [(question, dic[question]) for question in questions]
-                file.write('\n\n'.join(['\n'.join(['QuestionId:{0}'.format(response[0]), 'Answer:{0}'.format(response[1])])for response in responses]))
+                file.write('\n\n'.join(['\n'.join(['QuestionID: {0}'.format(response[0]), 'Answer:{0}'.format(response[1])])for response in responses]))
                 file.write('\n\n')
 
 ###############################################################################
@@ -139,7 +173,7 @@ if __name__ == '__main__':
     questions = getData(".questions") # returns a dict of questionIds
     answers = getData(".answers") # returns a dict of questionIds
 
-    file = open("train-my-answers.txt", 'w', encoding="utf-8")
+    file = open("train_my_answers.txt", 'w', encoding="utf-8")
 
     stopwords = set(nltk.corpus.stopwords.words("english"))
 
@@ -147,19 +181,27 @@ if __name__ == '__main__':
     outputDictBlogs = {}
 
     for question in questions.items():
-
+        #print(question)
+        #print(question[0])
         parseCurrQID = question[0].split("-")
+        #print(parseCurrQID)
         currFileName = create_filename(parseCurrQID)
+        #print(currFileName)
+
         currQ = question[1]["Question"]
+        #print(currQ)
         text = read_file(currFileName)
 
         qbow = get_bow(get_sentences(currQ)[0], stopwords)
 
         sentences = get_sentences(text)
         answer = baseline(qbow, sentences, stopwords)
+        #print(answer)
 
-        finalAnswer = " ".join(t[0] for t in answer if t not in stopwords)
-
+        #finalAnswer = " ".join(t[0] for t in answer if t not in stopwords)
+        finalAnswer = " ".join(t[0] for t in answer)
+        #print(finalAnswer)
+        
 
         if parseCurrQID[0] == "fables":
             outputDictFables.update({question[0]:finalAnswer})
@@ -167,8 +209,6 @@ if __name__ == '__main__':
             outputDictBlogs.update({question[0]:finalAnswer})
 
     # read in other data, ".story.par", "story.dep", ".sch.par", ".sch.dep", ".questions.par", ".questions.dep"
-
-
 
     write_results([outputDictFables, outputDictBlogs], file)
 
