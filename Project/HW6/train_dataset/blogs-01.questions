@@ -62,3 +62,28 @@ QuestionID: blogs-01-13
 Question: What was smashed?
 Difficulty: Easy
 Type: Story
+
+QuestionID: blogs-01-14
+Question: Who fired a bullet at the people?
+Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-01-15
+Question: Who was tear gas fired at?
+Difficulty: Medium
+Type: Story
+
+QuestionID: blogs-01-16
+Question: Why did the people protest?
+Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-01-17
+Question: What did the people create? 
+Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-01-18
+Question: Why were the police in full riot gear?
+Difficulty: Medium
+Type: Story
