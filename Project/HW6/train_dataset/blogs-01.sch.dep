@@ -1,15 +1,15 @@
 A	DT	3	det
-summit	NN	3	nn
+summit	NN	3	compound
 meeting	NN	7	nsubj
-named	VBN	3	vmod
-G20	NN	6	nn
+named	VBN	3	acl
+G20	NN	6	compound
 summit	NN	4	dobj
 started	VBD	0	ROOT
-on	IN	7	prep
+on	IN	10	case
 eventful	JJ	10	amod
-today	NN	8	pobj
+today	NN	7	nmod
 
-G20	NN	2	nn
+G20	NN	2	compound
 summit	NN	3	nsubj
 happened	VBD	0	ROOT
 annually	RB	3	advmod
@@ -22,9 +22,9 @@ leader	NN	2	conj
 came	VBD	0	ROOT
 and	CC	6	cc
 talked	VBD	6	conj
-about	IN	6	prep
+about	IN	11	mark
 it	PRP	11	nsubj
-running	VBG	9	pcomp
+running	VBG	6	advcl
 a	DT	13	det
 government	NN	11	dobj
 
@@ -34,17 +34,17 @@ protested	VBD	0	ROOT
 because	IN	6	mark
 it	PRP	6	nsubj
 disagreed	VBD	3	advcl
-about	IN	6	prep
+about	IN	9	case
 a	DT	9	det
-view	NN	7	pobj
+view	NN	6	nmod
 
 The	DT	2	det
 people	NNS	3	nsubj
 protested	VBD	0	ROOT
 peacefully	RB	3	advmod
-on	IN	3	prep
+on	IN	7	case
 a	DT	7	det
-street	NN	5	pobj
+street	NN	3	nmod
 
 The	DT	2	det
 people	NNS	3	nsubj
@@ -57,23 +57,23 @@ The	DT	2	det
 people	NNS	3	nsubj
 burned	VBD	0	ROOT
 a	DT	6	det
-police	NN	6	nn
+police	NN	6	compound
 car	NN	3	dobj
 and	CC	3	cc
 threw	VBD	3	conj
 a	DT	10	det
 thing	NN	8	dobj
-at	IN	8	prep
+at	IN	13	case
 a	DT	13	det
-police	NN	11	pobj
+police	NN	8	nmod
 
 The	DT	2	det
 police	NN	3	nsubj
 alleviated	VBD	0	ROOT
 the	DT	5	det
 people	NNS	3	dobj
-of	IN	5	prep
-riot	NN	6	pobj
+of	IN	7	case
+riot	NN	5	nmod
 
 The	DT	2	det
 police	NN	3	nsubj
@@ -81,16 +81,16 @@ fired	VBD	0	ROOT
 a	DT	5	nsubj
 tear	VB	3	ccomp
 gas	NN	5	dobj
-at	IN	5	prep
+at	IN	9	case
 the	DT	9	det
-people	NNS	7	pobj
+people	NNS	5	nmod
 and	CC	3	cc
 fired	VBD	3	conj
 a	DT	13	det
 bullet	NN	11	dobj
-at	IN	11	prep
+at	IN	16	case
 the	DT	16	det
-people	NNS	14	pobj
+people	NNS	11	nmod
 and	CC	3	cc
 the	DT	20	det
 people	NNS	21	nsubj

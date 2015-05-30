@@ -39,3 +39,39 @@ Question: Who flattered the crow?
 Answer: The fox
 Difficulty: Easy
 Type: Sch
+
+QuestionID: fables-01-8
+Question: What was the crow doing?
+Answer: sitting on the branch of a tree
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-01-9
+Question: Where was the cheese? 
+Answer: in the beak of the crow
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-01-10
+Question: Who set his wits to work? 
+Answer: a Fox
+Difficulty: Medium
+Type: Story
+
+QuestionID: fables-01-11
+Question: Who tried to discover how to get the cheese?  
+Answer: a Fox
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-01-12
+Question: What did the fox say about the bird’s beauty?    
+Answer: the beauty of the bird was incomparable
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-01-13
+Question: How did the crow caw?     
+Answer: loudly
+Difficulty: Medium
+Type: Sch

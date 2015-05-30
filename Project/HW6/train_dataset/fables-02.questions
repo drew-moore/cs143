@@ -36,7 +36,7 @@ Type: Story
 QuestionID: fables-02-8
 Question: Who was foolish?
 Difficulty: Easy
-Type: Sch
+Type: Story
 
 QuestionID: fables-02-9
 Question: What did the lion want?
@@ -44,11 +44,46 @@ Difficulty: Easy
 Type: Sch
 
 QuestionID: fables-02-10
-Question: Why didn't the lion attack the bull?
+Question: Why did not the lion attack the bull?
 Difficulty: Easy
 Type: Sch
 
 QuestionID: fables-02-11
 Question: What did the lion fear?
 Difficulty: Easy
+Type: Sch
+
+QuestionID: fables-02-12
+Question: What is ugly? 
+Difficulty: Medium
+Type: Story
+
+QuestionID: fables-02-13
+Question: Who salivated? 
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-02-14
+Question: Why did the lion salivate? 
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-02-15
+Question: What did the lion advise the bull? 
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-02-16
+Question: Why did the lion advise the bull to remove its horns?
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-02-17
+Question: What did the lion decide? 
+Difficulty: Medium
+Type: Sch
+
+QuestionID: fables-02-18
+Question: Who has horns? 
+Difficulty: Medium
 Type: Sch

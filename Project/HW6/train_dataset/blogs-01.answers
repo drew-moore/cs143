@@ -75,3 +75,33 @@ Question: What was smashed?
 Answer: windows of stores
 Difficulty: Easy
 Type: Story
+
+QuestionID: blogs-01-14
+Question: Who fired a bullet at the people?
+Answer: the police
+Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-01-15
+Question: Who was tear gas fired at?
+Answer: the rioters
+Difficulty: Medium
+Type: Story
+
+QuestionID: blogs-01-16
+Question: Why did the people protest?
+Answer: because they disagreed about a view
+Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-01-17
+Question: What did the people create? 
+Answer: riot
+Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-01-18
+Question: Why were the police in full riot gear?
+Answer: to alleviate the violence
+Difficulty: Medium
+Type: Story

@@ -13,6 +13,21 @@ QuestionId: blogs-01-12
 QuestionId: blogs-01-13
 (ROOT (SBARQ (WHNP (WP What)) (SQ (VBD was) (VP (VBN smashed))) (. ?)))
 
+QuestionId: blogs-01-14
+(ROOT (SBARQ (WHNP (WP Who)) (SQ (VP (VBD fired) (NP (DT a) (NN bullet)) (PP (IN at) (NP (DT the) (NNS people))))) (. ?)))
+
+QuestionId: blogs-01-15
+(ROOT (SBARQ (WHNP (WP Who)) (SQ (VP (VBD was) (SBAR (S (S (VP (VB tear) (NP (NN gas)))) (VP (VBD fired) (PP (IN at))))))) (. ?)))
+
+QuestionId: blogs-01-16
+(ROOT (SBARQ (WHADVP (WRB Why)) (SQ (VP (VBD did) (NP (DT the) (NNS people) (NN protest)))) (. ?)))
+
+QuestionId: blogs-01-17
+(ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NNS people)) (VP (VB create))) (. ?)))
+
+QuestionId: blogs-01-18
+(ROOT (SBARQ (WHADVP (WRB Why)) (SQ (VBD were) (NP (NP (DT the) (NN police)) (PP (IN in) (NP (JJ full) (NN riot) (NN gear))))) (. ?)))
+
 QuestionId: blogs-01-2
 (ROOT (SBARQ (WHNP (WP What)) (SQ (VBZ is) (NP (DT the) (NN summit) (NN meeting)) (VP (VBN named))) (. ?)))
 

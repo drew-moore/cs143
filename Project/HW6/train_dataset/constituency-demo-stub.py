@@ -52,32 +52,50 @@ def matches(pattern, root):
     return None
 
 def pattern_matcher(pattern, tree):
+
+    t = []
     for subtree in tree.subtrees():
         node = matches(pattern, subtree)
+
         if node is not None:
-            return node
+            t.append(node)
+    return t
     return None
 
-if __name__ == '__main__':
-    text_file = "fables-01.sch"
-    par_file = "fables-01.sch.par"
-
-    # Read the constituency parses into a list
+def responseTree(par_file):
     trees = read_con_parses(par_file)
 
     tree = trees[1]
 
     # Create our pattern
-    pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
+    #pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
 
     # Match our pattern to the tree
+
+    pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
+
+
     subtree = pattern_matcher(pattern, tree)
     # print(" ".join(subtree.leaves()))
 
+    for leaf in subtree:
+        print(leaf)
+        if leaf.leaves() == "tree":
+            print("true")
+
+    #print(subtree)
     # create a new pattern to match a smaller subset of subtree
-    pattern = nltk.ParentedTree.fromstring("(PP)")
+    #pattern = nltk.ParentedTree.fromstring("(PP)")
     # print(pattern)
 
     # Find and print the answer
-    subtree2 = pattern_matcher(pattern, subtree)
-    print(" ".join(subtree2.leaves()))
+    #subtree2 = pattern_matcher(pattern, subtree)
+    #print(" ".join(subtree.leaves()))
+
+if __name__ == '__main__':
+    text_file = "fables-01.sch"
+    par_file = "fables-01.sch.par"
+
+    responseTree(par_file)
+
+    # Read the constituency parses into a list

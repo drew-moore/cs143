@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
-import zipfile, argparse, os, nltk, operator
+import zipfile, argparse, os, nltk, operator, sys
 from collections import defaultdict
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
+from nltk.tree import Tree
 
 ###############################################################################
 ## Utility Functions ##########################################################
@@ -19,12 +20,12 @@ def read_file(filename):
 # This method takes as input the file extension of the set of files you want to open
 # and processes the data accordingly
 # Assumption: this python program is in the same directory as the training files
-def getData(file_extension):
+def getData(file_extension, given_filename):
     dataset_dict = {}
 
     # iterate through all the files in the current directory
     for filename in os.listdir("."):
-        if filename.endswith(file_extension):
+        if filename.endswith(file_extension) and filename.startswith(given_filename):
 
             # get stories and cumulatively add them to the dataset_dict
             if file_extension == ".story" or file_extension == ".sch":
@@ -68,6 +69,99 @@ def create_filename(parseCurrQID):
         currFileName = currFileName + ".sch"
 
     return  currFileName
+
+def questionCasePicker(filename):
+    trees = read_con_parses(filename)
+
+    questionTypes = []
+    for tree in trees:
+        questionTypes.append(tree.leaves()[0])
+    return questionTypes
+
+###############################################################################
+## Constituency Tree Functions ###############################################
+###############################################################################
+
+# Read the constituency parse from the line and construct the Tree
+def read_con_parses(parfile):
+    #TODO make sure file is sorted numerically by Qid instead of lexicially.
+    fh = open(parfile, 'r')
+    lines = fh.readlines()
+    fh.close()
+    return [Tree.fromstring(line) for line in lines if line[0] == '(']
+
+# See if our pattern matches the current root of the tree
+def matches(pattern, root):
+    # Base cases to exit our recursion
+    # If both nodes are null we've matched everything so far
+    if root is None and pattern is None:
+        return root
+
+    # We've matched everything in the pattern we're supposed to (we can ignore the extra
+    # nodes in the main tree for now)
+    elif pattern is None:
+        return root
+
+    # We still have something in our pattern, but there's nothing to match in the tree
+    elif root is None:
+        return None
+
+    # A node in a tree can either be a string (if it is a leaf) or node
+    plabel = pattern if isinstance(pattern, str) else pattern.label()
+    rlabel = root if isinstance(root, str) else root.label()
+
+    # If our pattern label is the * then match no matter what
+    if plabel == "*":
+        return root
+    # Otherwise they labels need to match
+    elif plabel == rlabel:
+        # If there is a match we need to check that all the children match
+        # Minor bug (what happens if the pattern has more children than the tree)
+        for pchild, rchild in zip(pattern, root):
+            match = matches(pchild, rchild)
+            if match is None:
+                return None
+
+        return root
+
+    return None
+
+def pattern_matcher(pattern, tree):
+
+    t = []
+    for subtree in tree.subtrees():
+        node = matches(pattern, subtree)
+
+        if node is not None:
+            t.append(node)
+    return t
+    return None
+
+def responseTree(par_file, sentenceNum, questionCase):
+    trees = read_con_parses(par_file)
+
+    tree = trees[sentenceNum]
+
+    #TODO add in cases patterns here
+    if questionCase == "Who":
+        nltk.ParentedTree.fromstring("(VP (*) (PP))")
+    elif questionCase == "Where":
+        pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
+        subtree = pattern_matcher(pattern, tree)
+        pattern = nltk.ParentedTree.fromstring("(PP)")
+        #subtree2 = pattern_matcher(pattern, subtree)
+
+        #print(subtree)
+        answer = ""
+        for leaf in subtree:
+            answer = " ".join(leaf.leaves())
+        return answer
+    elif questionCase == "What":
+        nltk.ParentedTree.fromstring("(VP (*) (PP))")
+    elif questionCase == "Why":
+        nltk.ParentedTree.fromstring("(VP (*) (PP))")
+    elif questionCase == "How":
+        nltk.ParentedTree.fromstring("(VP (*) (PP))")
 
 ###############################################################################
 ## Added Baseline Functions ###################################################
@@ -149,7 +243,7 @@ def baseline(qbow, sentences, stopwords):
     max_overlap = max(answers_overlap)
     sentence_list = [val[1] for index, val in enumerate(answers) if val[0] == max_overlap]
     best_answer = [sent for sentence in sentence_list for sent in sentence]
-    
+
     return best_answer
 
 # wrote this in a way that it should generalize to be usable with the next two assignments, assuming
@@ -174,49 +268,50 @@ if __name__ == '__main__':
     # optional functions for opening and organizing some of the data
     # if you do not understand how the data is being returned,
     # you can write your own methods; these are to help you get started
-    stories = getData(".story") # returns a list of stories
-    sch = getData(".sch") # returns a list of scheherazade realizations
-    questions = getData(".questions") # returns a dict of questionIds
-    answers = getData(".answers") # returns a dict of questionIds
 
-    file = open("train_my_answers.txt", 'w', encoding="utf-8")
+    filename = sys.argv[1]
+    file = open("train_my_answers.txt", 'w', encoding="utf-8").close()
+    file = open("train_my_answers.txt", 'a', encoding="utf-8")
 
-    stopwords = set(nltk.corpus.stopwords.words("english"))
+    filesToParse = read_file(filename)
+    filesList = filesToParse.split('\n')
 
-    outputDictFables = {}
-    outputDictBlogs = {}
+    for fileItem in filesList:
+        stories = getData(".story", fileItem) # returns a list of stories
+        sch = getData(".sch", fileItem) # returns a list of scheherazade realizations
+        questions = getData(".questions", fileItem) # returns a dict of questionIds
+        answers = getData(".answers", fileItem) # returns a dict of questionIds
+        questionTypes = questionCasePicker(fileItem + ".questions.par")
 
-    for question in questions.items():
-        #print(question)
-        #print(question[0])
-        parseCurrQID = question[0].split("-")
-        #print(parseCurrQID)
-        currFileName = create_filename(parseCurrQID)
-        #print(currFileName)
+        stopwords = set(nltk.corpus.stopwords.words("english"))
 
-        currQ = question[1]["Question"]
-        #print(currQ)
-        text = read_file(currFileName)
+        outputDictFables = {}
+        outputDictBlogs = {}
 
-        qbow = get_bow(get_sentences(currQ)[0], stopwords)
+        index = 0
+        for question in questions.items():
+            parseCurrQID = question[0].split("-")
+            currFileName = create_filename(parseCurrQID)
+            currQ = question[1]["Question"]
+            text = read_file(currFileName)
 
-        sentences = get_sentences(text)
-        answer = baseline(qbow, sentences, stopwords)
-        #print(answer)
+            qbow = get_bow(get_sentences(currQ)[0], stopwords)
 
-        #finalAnswer = " ".join(t[0] for t in answer if t not in stopwords)
-        finalAnswer = " ".join(t[0] for t in answer)
-        #print(finalAnswer)
-        
+            sentences = get_sentences(text)
+            answer = baseline(qbow, sentences, stopwords)
+            finalAnswer = " ".join(t[0] for t in answer)
 
-        if parseCurrQID[0] == "fables":
-            outputDictFables.update({question[0]:finalAnswer})
-        else:
-            outputDictBlogs.update({question[0]:finalAnswer})
+            responseTree(currFileName+".par", 0, questionTypes[index])
+            index = index + 1
+
+            if parseCurrQID[0] == "fables":
+                outputDictFables.update({question[0]:finalAnswer})
+            else:
+                outputDictBlogs.update({question[0]:finalAnswer})
 
     # read in other data, ".story.par", "story.dep", ".sch.par", ".sch.dep", ".questions.par", ".questions.dep"
 
-    write_results([outputDictFables, outputDictBlogs], file)
+        write_results([outputDictFables, outputDictBlogs], file)
 
     file.close()
 
