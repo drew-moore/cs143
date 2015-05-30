@@ -87,19 +87,8 @@ def questionCasePicker(filename):
 def read_con_parses(parfile):
     fh = open(parfile, 'r')
     lines = fh.readlines()
-    fh.close()
-
-    if parfile.endswith(".questions.par"):
-       Q_index = [int(re.split('-', line)[2].strip()) for line in lines if line[0] == 'Q']
-       Q_tree =  [Tree.fromstring(line) for line in lines if line[0] == '(']
-       Q_dict = {}
-       for i,j in zip(Q_index, Q_tree):
-           Q_dict.update({i: j})
-       Q_ordered = collections.OrderedDict(sorted(Q_dict.items()))
-       return [val for key,val in Q_ordered.items()]
- 
-    else:
-       return [Tree.fromstring(line) for line in lines if line[0] == '(']      
+    fh.close()     
+    return [Tree.fromstring(line) for line in lines if line[0] == '(']      
 
 # See if our pattern matches the current root of the tree
 def matches(pattern, root):
@@ -138,7 +127,6 @@ def matches(pattern, root):
     return None
 
 def pattern_matcher(pattern, tree):
-
     t = []
     for subtree in tree.subtrees():
         node = matches(pattern, subtree)
@@ -148,16 +136,26 @@ def pattern_matcher(pattern, tree):
     return t
     return None
 
-def responseTree(par_file, sentenceNum, questionCase):
-    trees = read_con_parses(par_file)
+'''
+def pattern_matcher(pattern, tree):
+    for subtree in tree.subtrees():
+        node = matches(pattern, subtree)
+        if node is not None:
+            return node
+    return None
+'''
 
+def responseTree(par_file, sentenceNum, questionCase, question_par):
+    trees = read_con_parses(par_file)
+    #print(sentenceNum)
+    #print(questionCase)
+    #print(question_par)
     tree = trees[sentenceNum]
-    
+    #print(tree)
     #TODO add in cases patterns here
-    '''
-    if questionCase == "Who":
-        #nltk.ParentedTree.fromstring("(VP (*) (PP))")
-        return("".join(tree.leaves()))
+    
+    if questionCase == "Who":       
+        return(" ".join(tree.leaves()))
     elif questionCase == "Where":
         pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
         subtree = pattern_matcher(pattern, tree)
@@ -170,15 +168,16 @@ def responseTree(par_file, sentenceNum, questionCase):
         return answer
     elif questionCase == "What":
         #nltk.ParentedTree.fromstring("(VP (*) (PP))")
-        return("".join(tree.leaves()))   
+        return(" ".join(tree.leaves()))   
     elif questionCase == "Why":
         #nltk.ParentedTree.fromstring("(VP (*) (PP))")
-        return("".join(tree.leaves()))
+        return(" ".join(tree.leaves()))
     elif questionCase == "How":
         #nltk.ParentedTree.fromstring("(VP (*) (PP))")
-        return("".join(tree.leaves()))
-    '''
-    return (" ".join(tree.leaves()))
+        return(" ".join(tree.leaves()))
+    else:
+    
+       return (" ".join(tree.leaves()))
 
 
 ###############################################################################
@@ -324,8 +323,12 @@ if __name__ == '__main__':
         stories = getData(".story", fileItem) # returns a list of stories
         sch = getData(".sch", fileItem) # returns a list of scheherazade realizations
         questions = getData(".questions", fileItem) # returns a dict of questionIds
+        questions = collections.OrderedDict(sorted(questions.items()))
+        #print(questions)
         answers = getData(".answers", fileItem) # returns a dict of questionIds
+        
         questionTypes = questionCasePicker(fileItem + ".questions.par")
+        question_par = read_con_parses(fileItem + ".questions.par")
         #print(questionTypes)
 
         stopwords = set(nltk.corpus.stopwords.words("english"))
@@ -334,7 +337,10 @@ if __name__ == '__main__':
         outputDictBlogs = {}
 
         index = 0
+
         for question in questions.items():
+            #print(question)
+            #print(question_par[index]) 
             parseCurrQID = question[0].split("-")
             currFileName = create_filename(parseCurrQID)
             currQ = question[1]["Question"]
@@ -352,7 +358,7 @@ if __name__ == '__main__':
                sent, index_sent = sentMacher(finalAnswer, text)
                #print(sent)              
                #finalAnswer = sent
-               finalAnswer = responseTree(currFileName+".par", index_sent, questionTypes[index])
+               finalAnswer = responseTree(currFileName+".par", index_sent, questionTypes[index], question_par[index])
             #print(finalAnswer)
             index = index + 1
             
