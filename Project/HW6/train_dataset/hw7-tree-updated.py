@@ -2,9 +2,10 @@
 import zipfile, argparse, os, nltk, operator, sys, re
 from collections import defaultdict
 import collections
+from dep_analyzer import find_answer
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
-
+from nltk.parse import DependencyGraph
 from nltk.tree import *
 
 ###############################################################################
@@ -90,7 +91,84 @@ def read_con_parses(parfile):
     fh.close()     
     #return [Tree.fromstring(line) for line in lines if line[0] == '(']    
     ### change it to ParentedTree ###  
-    return [ParentedTree.fromstring(line) for line in lines if line[0] == '('] 
+    return [ParentedTree.fromstring(line) for line in lines if line[0] == '(']
+
+def read_q_dep(fh):
+    dep_lines = []
+    id = None
+    for line in fh:
+        if re.match(r"^QuestionId:\s+(.*)$", line):
+            # You would want to get the question id here and store it with the parse
+            id = line.split(': ')[1].split('\n')[0]
+            break
+    for line in fh:
+        line = line.strip()
+        if len(line) == 0:
+            return (id,update_inconsistent_tags("\n".join(dep_lines)))
+        elif re.match(r"^QuestionId:\s+(.*)$", line):
+            continue
+        dep_lines.append(line)
+
+    if len(dep_lines) > 0:
+        return (id,update_inconsistent_tags("\n".join(dep_lines)))
+    else:
+        return None
+
+# Read the lines of an individual dependency parse
+def read_dep(fh):
+    dep_lines = []
+    for line in fh:
+        line = line.strip()
+        if len(line) == 0:
+            return update_inconsistent_tags("\n".join(dep_lines))
+        elif re.match(r"^QuestionId:\s+(.*)$", line):
+            # You would want to get the question id here and store it with the parse
+            continue
+        dep_lines.append(line)
+    if len(dep_lines) > 0:
+        return update_inconsistent_tags("\n".join(dep_lines))
+    else:
+        return None
+
+# Note: the dependency tags return by Stanford Parser are slightly different than
+# what NLTK expects. We tried to change all of them, but in case we missed any, this
+# method should correct them for you.
+def update_inconsistent_tags(old):
+    return old.replace("root", "ROOT")
+
+# Read the dependency parses from a file
+def read_dep_parses(depfile, q=False):
+    fh = open(depfile, 'r')
+
+    # list to store the results
+    if q:
+        graphs = {}
+    else:
+        graphs = []
+
+    # Read the lines containing the first parse.
+    if q:
+        dep = read_q_dep(fh)
+    else:
+        dep = read_dep(fh)
+
+    # While there are more lines:
+    # 1) create the DependencyGraph
+    # 2) add it to our list
+    # 3) try again until we're done
+    while dep is not None:
+
+        if q:
+            graph = DependencyGraph(dep[1])
+            graphs[dep[0]] = graph
+            dep = read_q_dep(fh)
+        else:
+            graph = DependencyGraph(dep)
+            graphs.append(graph)
+            dep = read_dep(fh)
+    fh.close()
+
+    return graphs
 
 # See if our pattern matches the current root of the tree
 def matches(pattern, root):
@@ -362,13 +440,21 @@ if __name__ == '__main__':
     filesList = filesToParse.split('\n')
 
     for fileItem in filesList:
+
         stories = getData(".story", fileItem) # returns a list of stories
         sch = getData(".sch", fileItem) # returns a list of scheherazade realizations
+
+        text = read_file(fileItem + '.sch')
+        sentences = get_sentences(text)
+        const_parses = read_con_parses(fileItem + '.sch.par')
+        dep_parses = read_dep_parses(fileItem + '.sch.dep')
+        parses = [{'sentence':sentences, 'const':const_parses[i], 'dep':dep_parses[i] } for i in range(0, len(sentences))]
+
         questions = getData(".questions", fileItem) # returns a dict of questionIds
         questions = collections.OrderedDict(sorted(questions.items()))
-        #print(questions)
+
         answers = getData(".answers", fileItem) # returns a dict of questionIds
-        
+
         questionTypes = questionCasePicker(fileItem + ".questions.par")
         question_par = read_con_parses(fileItem + ".questions.par")
         #print(questionTypes)
@@ -380,19 +466,23 @@ if __name__ == '__main__':
 
         index = 0
 
+        q_deps = read_dep_parses(fileItem + '.questions.dep', q=True)
+        for question in questions:
+            questions[question]['dep_parse'] = q_deps[question]
+
         for question in questions.items():
             #print(question)
             #print(question_par[index]) 
             parseCurrQID = question[0].split("-")
-            print(parseCurrQID)
             currFileName = create_filename(parseCurrQID)
+
+            print(parseCurrQID)
             currQ = question[1]["Question"]
-            text = read_file(currFileName)
 
             qbow = get_bow(get_sentences(currQ)[0], stopwords)
+            answer = find_answer(question[1]['dep_parse'], [entry['dep'] for entry in parses])
+#            answer = baseline(qbow, sentences, stopwords)
 
-            sentences = get_sentences(text)
-            answer = baseline(qbow, sentences, stopwords)
             #print(answer)
             if answer == "":
                finalAnswer = ""
