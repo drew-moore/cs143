@@ -480,8 +480,8 @@ if __name__ == '__main__':
             currQ = question[1]["Question"]
 
             qbow = get_bow(get_sentences(currQ)[0], stopwords)
-            answer = find_answer(question[1]['dep_parse'], [entry['dep'] for entry in parses])
-#            answer = baseline(qbow, sentences, stopwords)
+ #           answer = find_answer(question[1]['dep_parse'], [entry['dep'] for entry in parses])
+            answer = baseline(qbow, sentences, stopwords)
 
             #print(answer)
             if answer == "":
