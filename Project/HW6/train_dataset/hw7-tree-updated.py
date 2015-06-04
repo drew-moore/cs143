@@ -444,11 +444,18 @@ if __name__ == '__main__':
         stories = getData(".story", fileItem) # returns a list of stories
         sch = getData(".sch", fileItem) # returns a list of scheherazade realizations
 
-        text = read_file(fileItem + '.sch')
-        sentences = get_sentences(text)
-        const_parses = read_con_parses(fileItem + '.sch.par')
-        dep_parses = read_dep_parses(fileItem + '.sch.dep')
-        parses = [{'sentence':sentences, 'const':const_parses[i], 'dep':dep_parses[i] } for i in range(0, len(sentences))]
+        sch_text = read_file(fileItem + '.sch')
+        story_text = read_file(fileItem + '.story')
+
+        sch_sentences = get_sentences(sch_text)
+        sch_consts = read_con_parses(fileItem + '.sch.par')
+        sch_deps = read_dep_parses(fileItem + '.sch.dep')
+        sch_parses = [{'sentence':sch_sentences[i], 'const':sch_consts[i], 'dep':sch_deps[i] } for i in range(0, len(sch_sentences))]
+
+        story_sentences = get_sentences(story_text)
+        story_consts = read_con_parses(fileItem + '.story.par')
+        story_deps = read_dep_parses(fileItem + '.story.dep')
+        story_parses = [{'sentence':story_sentences[i], 'const':story_consts[i], 'dep':story_deps[i]} for i in range(0, len(story_sentences))]
 
         questions = getData(".questions", fileItem) # returns a dict of questionIds
         questions = collections.OrderedDict(sorted(questions.items()))
@@ -473,22 +480,31 @@ if __name__ == '__main__':
         for question in questions.items():
             #print(question)
             #print(question_par[index]) 
+
+            if question[1]['Type'] == 'Sch':
+                q_sentences = sch_sentences
+                q_deps = sch_deps
+                q_text = sch_text
+            else:
+                q_sentences = story_sentences
+                q_deps = story_deps
+                q_text = story_text
+
             parseCurrQID = question[0].split("-")
             currFileName = create_filename(parseCurrQID)
-
             print(parseCurrQID)
             currQ = question[1]["Question"]
 
             qbow = get_bow(get_sentences(currQ)[0], stopwords)
- #           answer = find_answer(question[1]['dep_parse'], [entry['dep'] for entry in parses])
-            answer = baseline(qbow, sentences, stopwords)
+ #           answer = find_answer(question[1]['dep_parse'], q_deps)
+            answer = baseline(qbow, q_sentences, stopwords)
 
             #print(answer)
             if answer == "":
                finalAnswer = ""
             else:
                finalAnswer = " ".join(t[0] for t in answer)
-               sent, index_sent = sentMacher(finalAnswer, text)
+               sent, index_sent = sentMacher(finalAnswer, q_text)
                #print(sent)              
                #finalAnswer = sent
                finalAnswer = responseTree(currFileName+".par", index_sent, questionTypes[index], question_par[index])
