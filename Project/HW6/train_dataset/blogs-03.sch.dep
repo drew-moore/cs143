@@ -1,13 +1,13 @@
 Once	RB	5	advmod
 storm	NN	5	nsubj
 was	VBD	5	aux
-occurring	VBG	0	ROOT
+occurring	VBG	0	root
 in	IN	7	case
 Louisiana	NNP	5	nmod
 
 A	DT	2	det
 narrator	NN	3	nsubj
-watched	VBD	0	ROOT
+watched	VBD	0	root
 a	DT	5	det
 channel	NN	3	dobj
 named	VBN	5	acl
@@ -22,7 +22,7 @@ media	NNS	10	dobj
 
 The	DT	2	det
 narrator	NN	3	nsubj
-went	VBD	0	ROOT
+went	VBD	0	root
 back	RB	3	advmod
 to	TO	7	case
 a	DT	7	det
@@ -40,7 +40,7 @@ generator	NN	14	dobj
 
 The	DT	2	det
 narrator	NN	3	nsubj
-filled	VBD	0	ROOT
+filled	VBD	0	root
 a	DT	5	det
 group	NN	3	dobj
 of	IN	7	case
@@ -55,7 +55,7 @@ gasoline	NN	11	nmod
 
 The	DT	2	det
 narrator	NN	3	nsubj
-purchased	VBD	0	ROOT
+purchased	VBD	0	root
 an	DT	6	det
 important	JJ	6	amod
 group	NN	3	dobj
@@ -63,16 +63,16 @@ of	IN	8	case
 things	NNS	6	nmod
 
 Storm	NN	2	nsubj
-occurred	VBD	0	ROOT
+occurred	VBD	0	root
 
 The	DT	2	det
 narrator	NN	3	nsubj
-lost	VBD	0	ROOT
+lost	VBD	0	root
 electricity	NN	3	dobj
 
 Some	DT	2	det
 wind	NN	3	nsubj
-occurred	VBD	0	ROOT
+occurred	VBD	0	root
 
 An	DT	2	det
 area	NN	9	nsubj
@@ -82,7 +82,7 @@ neighborhood	NN	2	nmod
 of	IN	8	case
 the	DT	8	det
 narrator	NN	5	nmod
-had	VBD	0	ROOT
+had	VBD	0	root
 a	DT	12	det
 large	JJ	12	amod
 group	NN	9	dobj
@@ -99,7 +99,7 @@ trees	NNS	19	nmod
 
 The	DT	2	det
 narrator	NN	3	nsubj
-stood	VBD	0	ROOT
+stood	VBD	0	root
 up	RP	3	compound:prt
 on	IN	7	case
 a	DT	7	det
@@ -112,7 +112,7 @@ tree	NN	9	dobj
 
 The	DT	2	det
 tree	NN	3	nsubj
-split	NN	0	ROOT
+split	NN	0	root
 apart	RB	3	advmod
 and	CC	3	cc
 fell	VBD	3	conj
@@ -125,7 +125,7 @@ neighbor	NN	9	nmod
 
 The	DT	2	det
 narrator	NN	3	nsubj
-began	VBD	0	ROOT
+began	VBD	0	root
 to	TO	6	mark
 be	VB	6	cop
 nervous	JJ	3	xcomp
@@ -146,7 +146,7 @@ narrator	NN	17	nmod
 
 The	DT	2	det
 narrator	NN	3	nsubj
-began	VBD	0	ROOT
+began	VBD	0	root
 to	TO	6	mark
 be	VB	6	auxpass
 concerned	VBN	3	xcomp
@@ -198,7 +198,7 @@ wife	NN	6	nsubj
 of	IN	5	case
 the	DT	5	det
 narrator	NN	2	nmod
-stayed	VBD	0	ROOT
+stayed	VBD	0	root
 in	IN	10	case
 the	DT	10	det
 safe	JJ	10	amod
@@ -233,14 +233,14 @@ home	NN	36	nmod
 
 The	DT	2	det
 narrator	NN	3	nsubj
-heard	VBD	0	ROOT
+heard	VBD	0	root
 loud	JJ	5	amod
 noise	NN	3	dobj
 
 The	DT	3	det
 first	JJ	3	amod
 tree	NN	4	nsubj
-fell	VBD	0	ROOT
+fell	VBD	0	root
 onto	IN	7	case
 a	DT	7	det
 RV	NN	4	nmod
@@ -262,7 +262,7 @@ The	DT	2	det
 group	NN	5	nsubj
 of	IN	4	case
 trees	NNS	2	nmod
-began	VBD	0	ROOT
+began	VBD	0	root
 to	TO	8	mark
 be	VB	8	aux
 falling	VBG	5	xcomp
@@ -272,7 +272,7 @@ fourth	JJ	7	compound
 #	#	5	compound
 2	LS	2	dep
 tree	NN	8	nsubj
-fell	VBD	0	ROOT
+fell	VBD	0	root
 on	IN	12	case
 a	DT	12	det
 lawn	NN	12	compound
@@ -281,7 +281,7 @@ mower	NN	8	nmod
 The	DT	3	det
 fourth	JJ	3	amod
 tree	NN	4	nsubj
-fell	VBD	0	ROOT
+fell	VBD	0	root
 on	IN	8	case
 a	DT	8	det
 golf	NN	8	compound
@@ -293,7 +293,7 @@ of	IN	4	case
 trees	NNS	2	nmod
 did	VBD	7	aux
 n't	RB	7	neg
-fall	VB	0	ROOT
+fall	VB	0	root
 on	IN	10	case
 the	DT	10	det
 house	NN	7	nmod
@@ -307,14 +307,14 @@ of	IN	4	case
 neighbors	NNS	2	nmod
 did	VBD	7	aux
 n't	RB	7	neg
-begin	VB	0	ROOT
+begin	VB	0	root
 to	TO	10	mark
 be	VB	10	cop
 fortunate	JJ	7	xcomp
 
 President	NNP	2	compound
 Bush	NNP	3	nsubj
-came	VBD	0	ROOT
+came	VBD	0	root
 into	IN	6	case
 Baton	NNP	6	compound
 Rouge	NNP	3	nmod
@@ -338,7 +338,7 @@ a	DT	10	det
 governor	NN	7	nmod
 named	VBN	10	acl
 Jindal	NNP	11	dobj
-restored	VBD	0	ROOT
+restored	VBD	0	root
 order	NN	13	dobj
 and	CC	13	cc
 the	DT	18	det
@@ -355,13 +355,13 @@ of	IN	28	case
 Jindal	NNP	26	nmod
 
 Storm	NN	2	nsubj
-stopped	VBD	0	ROOT
+stopped	VBD	0	root
 
 The	DT	2	det
 narrator	NN	5	nsubj
 did	VBD	5	aux
 n't	RB	5	neg
-have	VB	0	ROOT
+have	VB	0	root
 electricity	NN	5	dobj
 because	IN	13	mark
 a	DT	9	det
@@ -376,14 +376,14 @@ The	DT	2	det
 generator	NN	5	nsubj
 did	VBD	5	aux
 n't	RB	5	neg
-begin	VB	0	ROOT
+begin	VB	0	root
 to	TO	8	mark
 be	VB	8	aux
 working	VBG	5	xcomp
 
 The	DT	2	det
 narrator	NN	3	nsubj
-brought	VBD	0	ROOT
+brought	VBD	0	root
 the	DT	5	det
 generator	NN	3	dobj
 in	IN	7	case
@@ -394,12 +394,12 @@ parent	NN	6	nsubj
 of	IN	5	case
 the	DT	5	det
 narrator	NN	2	nmod
-had	VBD	0	ROOT
+had	VBD	0	root
 electricity	NN	6	dobj
 
 The	DT	2	det
 narrator	NN	3	nsubj
-brought	VBD	0	ROOT
+brought	VBD	0	root
 the	DT	5	det
 family	NN	3	dobj
 of	IN	8	case
@@ -420,7 +420,7 @@ group	NN	6	nsubj
 of	IN	5	case
 power	NN	5	compound
 lines	NNS	2	nmod
-began	VBD	0	ROOT
+began	VBD	0	root
 to	TO	8	mark
 be	VB	6	xcomp
 down	RB	8	advmod

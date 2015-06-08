@@ -53,7 +53,7 @@ Difficulty: Easy
 Type: Sch
 
 QuestionID: fables-03-10
-Question: Where where the contents of the horn spilled? 
+Question: Where were the contents of the horn spilled? 
 Answer: the ground
 Difficulty: Easy
 Type: Story
@@ -123,3 +123,39 @@ Question: Who spilled its contents?
 Answer: the eagle
 Difficulty: Medium
 Type: Story
+
+QuestionID: fables-03-22
+Question: Who swooped towards a snake?
+Answer: An eagle
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-03-23
+Question: Who spiraled around the eagle?
+Answer: an eagle
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-03-24
+Question: What did the bird of prey descend toward?
+Answer: A serpent
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-03-25
+Question: Who skirmished with the serpent? 
+Answer: the eagle 
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-03-26
+Question: Who tried to support the eagle?
+Answer: The countryman
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-03-27
+Question: Where did the serpent spat some toxin?
+Answer: The drinking vessel
+Difficulty: Hard
+Type: Sch

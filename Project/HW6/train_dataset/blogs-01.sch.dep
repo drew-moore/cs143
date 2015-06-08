@@ -4,14 +4,14 @@ meeting	NN	7	nsubj
 named	VBN	3	acl
 G20	NN	6	compound
 summit	NN	4	dobj
-started	VBD	0	ROOT
+started	VBD	0	root
 on	IN	10	case
 eventful	JJ	10	amod
 today	NN	7	nmod
 
 G20	NN	2	compound
 summit	NN	3	nsubj
-happened	VBD	0	ROOT
+happened	VBD	0	root
 annually	RB	3	advmod
 
 A	DT	2	det
@@ -19,7 +19,7 @@ world	NN	6	nsubj
 and	CC	2	cc
 many	JJ	5	amod
 leader	NN	2	conj
-came	VBD	0	ROOT
+came	VBD	0	root
 and	CC	6	cc
 talked	VBD	6	conj
 about	IN	11	mark
@@ -30,7 +30,7 @@ government	NN	11	dobj
 
 A	DT	2	det
 people	NNS	3	nsubj
-protested	VBD	0	ROOT
+protested	VBD	0	root
 because	IN	6	mark
 it	PRP	6	nsubj
 disagreed	VBD	3	advcl
@@ -40,7 +40,7 @@ view	NN	6	nmod
 
 The	DT	2	det
 people	NNS	3	nsubj
-protested	VBD	0	ROOT
+protested	VBD	0	root
 peacefully	RB	3	advmod
 on	IN	7	case
 a	DT	7	det
@@ -48,14 +48,14 @@ street	NN	3	nmod
 
 The	DT	2	det
 people	NNS	3	nsubj
-rebelled	VBD	0	ROOT
+rebelled	VBD	0	root
 and	CC	3	cc
 created	VBD	3	conj
 riot	NN	5	dobj
 
 The	DT	2	det
 people	NNS	3	nsubj
-burned	VBD	0	ROOT
+burned	VBD	0	root
 a	DT	6	det
 police	NN	6	compound
 car	NN	3	dobj
@@ -69,7 +69,7 @@ police	NN	8	nmod
 
 The	DT	2	det
 police	NN	3	nsubj
-alleviated	VBD	0	ROOT
+alleviated	VBD	0	root
 the	DT	5	det
 people	NNS	3	dobj
 of	IN	7	case
@@ -77,13 +77,13 @@ riot	NN	5	nmod
 
 The	DT	2	det
 police	NN	3	nsubj
-fired	VBD	0	ROOT
-a	DT	5	nsubj
-tear	VB	3	ccomp
-gas	NN	5	dobj
+fired	VBD	0	root
+a	DT	6	det
+tear	JJ	6	amod
+gas	NN	3	dobj
 at	IN	9	case
 the	DT	9	det
-people	NNS	5	nmod
+people	NNS	3	nmod
 and	CC	3	cc
 fired	VBD	3	conj
 a	DT	13	det
@@ -97,4 +97,3 @@ people	NNS	21	nsubj
 smashed	VBD	3	conj
 a	DT	23	det
 window	NN	21	dobj
-

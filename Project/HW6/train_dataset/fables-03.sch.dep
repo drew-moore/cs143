@@ -1,6 +1,6 @@
 An	DT	2	det
 eagle	NN	3	nsubj
-swooped	VBD	0	ROOT
+swooped	VBD	0	root
 toward	IN	6	case
 a	DT	6	det
 serpent	NN	3	nmod
@@ -17,7 +17,7 @@ it	PRP	15	dobj
 
 The	DT	2	det
 eagle	NN	3	nsubj
-fought	VBN	0	ROOT
+fought	VBN	0	root
 with	IN	6	case
 the	DT	6	det
 serpent	NN	3	nmod
@@ -35,7 +35,7 @@ owned	VBD	2	acl:relcl
 a	DT	7	det
 drinking	NN	7	compound
 vessel	NN	4	dobj
-tried	VBD	0	ROOT
+tried	VBD	0	root
 to	TO	10	mark
 help	VB	8	xcomp
 the	DT	12	det
@@ -45,7 +45,7 @@ escape	VB	12	acl
 
 The	DT	2	det
 eagle	NN	3	nsubj
-escaped	VBD	0	ROOT
+escaped	VBD	0	root
 and	CC	3	cc
 the	DT	7	det
 countryman	NN	8	nsubj
@@ -58,7 +58,7 @@ serpent	NN	8	nmod
 
 The	DT	2	det
 serpent	NN	3	nsubj
-spat	VBD	0	ROOT
+spat	VBD	0	root
 some	DT	5	det
 poison	NN	3	dobj
 in	IN	9	case
@@ -68,7 +68,7 @@ vessel	NN	3	nmod
 
 The	DT	2	det
 countryman	NN	3	nsubj
-decided	VBD	0	ROOT
+decided	VBD	0	root
 to	TO	5	mark
 sip	VB	3	xcomp
 from	IN	9	case
@@ -78,7 +78,7 @@ vessel	NN	5	nmod
 
 The	DT	2	det
 eagle	NN	3	nsubj
-spilled	VBD	0	ROOT
+spilled	VBD	0	root
 the	DT	6	det
 drinking	NN	6	compound
 vessel	NN	3	dobj

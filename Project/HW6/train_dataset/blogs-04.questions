@@ -54,16 +54,21 @@ Difficulty: Medium
 Type: Sch
 
 QuestionID: blogs-04-12
-Question: Why did the narrator place the bowl on the deck?
-Difficulty: Medium
-Type: Sch
-
-QuestionID: blogs-04-13
 Question: Why did the birds organize themselves?
 Difficulty: Medium
 Type: Sch
 
-QuestionID: blogs-04-14
+QuestionID: blogs-04-13
 Question: What did we keep outside on the back deck?
 Difficulty: Medium
 Type: Story
+
+QuestionID: blogs-04-14
+Question: Where did the birds form themselves?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-04-15
+Question: What erred off the deck's railing?
+Difficulty: Hard
+Type: Sch

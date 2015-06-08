@@ -3,8 +3,7 @@ import zipfile, argparse, os, nltk, operator, sys, re
 from collections import defaultdict
 import collections
 from dep_analyzer import find_answer
-from nltk.stem import WordNetLemmatizer
-from nltk.stem.porter import PorterStemmer
+
 from nltk.parse import DependencyGraph
 from nltk.tree import *
 
@@ -314,32 +313,8 @@ def get_sentences(text):
 
     return sentences
 
-def lemmatization(word, tag):
-    if tag in ('VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ'):
-       pos = 'v'
-    elif tag in ('JJ', 'JJR', 'JJS'):
-       pos = 'a'
-    elif tag in ('RB','RBR', 'RBS'):
-       pos = 'r'   
-    else:    
-       pos = 'n'   
-    return WordNetLemmatizer().lemmatize(word, pos)
 
 # ADJ, ADJ_SAT, ADV, NOUN, VERB = 'a', 's', 'r', 'n', 'v'
-
-def get_bow(tagged_tokens, stopwords):
-    bow = []
-    for token in tagged_tokens:
-        token_lower = token[0].lower()
-        #print(token_lower)
-        if token_lower not in stopwords:
-           tag = token[1]
-           #print(tag)
-           token_stem = PorterStemmer().stem(token_lower)
-           token_lemma = lemmatization(token_stem, tag)         
-           bow.append(token_lemma)
-
-    return set(bow)
 
     #return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
 
@@ -352,41 +327,6 @@ def find_phrase(tagged_tokens, qbow):
 # qtokens: is a list of pos tagged question tokens with SW removed
 # sentences: is a list of pos tagged story sentences
 # stopwords is a set of stopwords
-def baseline(qbow, sentences, stopwords):
-    # Collect all the candidate answers
-    answers = []
-    for sent in sentences:
-        # A list of all the word tokens in the sentence
-        sbow = get_bow(sent, stopwords)
-
-        # Count the # of overlapping words between the Q and the A
-        # & is the set intersection operator
-        overlap = len(qbow & sbow)
-
-        answers.append((overlap, sent))
-
-    # Sort the results by the first element of the tuple (i.e., the count)
-    # Sort answers from smallest to largest by default, so reverse it
-    answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
-    #print(answers)
-    '''
-    # if no sentence has overlapped words, return the entire story
-    if answers[0][0] == 0:
-       best_answer = [sent for sentence in sentences for sent in sentence]
-    # Return the best answer
-    else:
-       best_answer = (answers[0])[1]
-    '''
-    # return all tied overlapped sentences, including 0 overlapped case
-    answers_overlap = [num[0] for num in answers]
-    max_overlap = max(answers_overlap)
-    sentence_list = [val[1] for index, val in enumerate(answers) if val[0] == max_overlap]
-    best_answer = [sent for sentence in sentence_list for sent in sentence]
-
-    if len(sentence_list) == 1:
-       return best_answer
-    else:
-       return ""
 
 def sentMacher(answer, text):
     token_answer = nltk.word_tokenize(answer)
@@ -433,12 +373,13 @@ if __name__ == '__main__':
     # you can write your own methods; these are to help you get started
 
     filename = sys.argv[1]
-    file = open("train_my_answers.txt", 'w', encoding="utf-8").close()
-    file = open("train_my_answers.txt", 'a', encoding="utf-8")
+    file = open("answers-bl.txt", 'w', encoding="utf-8").close()
+    file = open("answers-bl.txt", 'a', encoding="utf-8")
 
     filesToParse = read_file(filename)
     filesList = filesToParse.split('\n')
-
+    outputDictFables = {}
+    outputDictBlogs = {}
     for fileItem in filesList:
 
         stories = getData(".story", fileItem) # returns a list of stories
@@ -455,8 +396,11 @@ if __name__ == '__main__':
         story_sentences = get_sentences(story_text)
         story_consts = read_con_parses(fileItem + '.story.par')
         story_deps = read_dep_parses(fileItem + '.story.dep')
-        story_parses = [{'sentence':story_sentences[i], 'const':story_consts[i], 'dep':story_deps[i]} for i in range(0, len(story_sentences))]
-
+        try:
+            story_parses = [{'sentence':story_sentences[i], 'const':story_consts[i], 'dep':story_deps[i]} for i in range(0, len(story_sentences))]
+        except:
+            story_parses = [{'sentence':story_sentences[i], 'const':story_consts[i-1], 'dep':story_deps[i-1]} for i in range(0, len(story_sentences))]
+            pass
         questions = getData(".questions", fileItem) # returns a dict of questionIds
         questions = collections.OrderedDict(sorted(questions.items()))
 
@@ -468,8 +412,7 @@ if __name__ == '__main__':
 
         stopwords = set(nltk.corpus.stopwords.words("english"))
 
-        outputDictFables = {}
-        outputDictBlogs = {}
+
 
         index = 0
 
@@ -495,23 +438,26 @@ if __name__ == '__main__':
             print(parseCurrQID)
             currQ = question[1]["Question"]
 
-            qbow = get_bow(get_sentences(currQ)[0], stopwords)
- #           answer = find_answer(question[1]['dep_parse'], q_deps)
-            answer = baseline(qbow, q_sentences, stopwords)
+            answer_idx = find_answer(question[1]['dep_parse'], q_deps)
 
+            print(currQ)
             #print(answer)
-            if answer == "":
+            if answer_idx is None:
                finalAnswer = ""
+               print('no answer')
             else:
-               finalAnswer = " ".join(t[0] for t in answer)
-               sent, index_sent = sentMacher(finalAnswer, q_text)
-               #print(sent)              
-               #finalAnswer = sent
-               finalAnswer = responseTree(currFileName+".par", index_sent, questionTypes[index], question_par[index])
+                answer = q_sentences[answer_idx]
+                finalAnswer = " ".join(t[0] for t in answer)
+                print(finalAnswer)
+                sent, index_sent = sentMacher(finalAnswer, q_text)
+                #print(sent)
+                #finalAnswer = sent
+                finalAnswer = responseTree(currFileName+".par", index_sent, questionTypes[index], question_par[index])
             #print(finalAnswer)
             index = index + 1
             
-            
+            if parseCurrQID[1] == '5':
+                i = 43
             if parseCurrQID[0] == "fables":
                 outputDictFables.update({question[0]:finalAnswer})
             else:
@@ -519,7 +465,7 @@ if __name__ == '__main__':
 
     # read in other data, ".story.par", "story.dep", ".sch.par", ".sch.dep", ".questions.par", ".questions.dep"
 
-        write_results([outputDictFables, outputDictBlogs], file)
+    write_results([outputDictBlogs, outputDictFables], file)
 
     file.close()
 

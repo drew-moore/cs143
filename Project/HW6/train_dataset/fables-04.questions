@@ -62,3 +62,23 @@ QuestionID: fables-04-13
 Question: What was the soup served in? 
 Difficulty: Medium
 Type: Sch
+
+QuestionID: fables-04-14
+Question: Who tried to drink some savory broth and failed?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-04-15
+Question: Who tried to drink some savory stock?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-04-16
+Question: What did the canine serve?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-04-17
+Question: Who attempted to drink some savory soup?
+Difficulty: Hard
+Type: Sch

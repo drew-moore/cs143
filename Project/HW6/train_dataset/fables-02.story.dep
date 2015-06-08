@@ -1,13 +1,13 @@
 A	DT	2	det
 Lion	NNP	3	nsubj
-watched	VBD	0	ROOT
-a	DT	7	det
-fat	JJ	7	amod
-Bull	NN	7	compound
-feeding	NN	3	dobj
+watched	VBD	0	root
+a	DT	6	det
+fat	JJ	6	amod
+Bull	NN	3	dobj
+feeding	VBG	6	acl
 in	IN	10	case
 a	DT	10	det
-meadow	NN	3	nmod
+meadow	NN	7	nmod
 and	CC	3	cc
 his	PRP$	14	nmod:poss
 mouth	NN	15	nsubj
@@ -58,7 +58,7 @@ not	RB	21	neg
 promise	NN	21	compound
 success	NN	18	dobj
 he	PRP	24	nsubj
-determined	VBD	0	ROOT
+determined	VBD	0	root
 to	TO	26	mark
 resort	VB	24	xcomp
 to	TO	28	case
@@ -79,7 +79,7 @@ him	PRP	11	nmod
 I	PRP	19	nsubj
 can	MD	19	aux
 not	RB	19	neg
-help	VB	0	ROOT
+help	VB	0	root
 saying	VBG	19	xcomp
 how	WRB	22	advmod
 much	JJ	24	dep
@@ -89,14 +89,14 @@ your	PRP$	27	nmod:poss
 magnificent	JJ	27	amod
 figure	NN	24	dobj
 
-What	WP	0	ROOT
+What	WP	0	root
 a	DT	4	det
 fine	JJ	4	amod
 head	NN	1	dep
 
 What	WDT	3	det
 powerful	JJ	3	amod
-shoulders	NNS	0	ROOT
+shoulders	NNS	0	root
 and	CC	5	case
 thighs	NNS	3	nmod
 
@@ -110,14 +110,14 @@ the	DT	10	det
 world	NN	11	nmod
 makes	VBZ	5	acl:relcl
 you	PRP	11	dobj
-wear	VB	0	ROOT
+wear	VB	0	root
 those	DT	16	det
 ugly	JJ	16	amod
 horns	NNS	13	dobj
 
 You	PRP	3	nsubj
 must	MD	3	aux
-find	VB	0	ROOT
+find	VB	0	root
 them	PRP	3	dobj
 as	IN	6	case
 awkward	JJ	3	nmod
@@ -132,7 +132,7 @@ you	PRP	8	nsubj
 would	MD	8	aux
 do	VB	8	dep
 much	RB	8	advmod
-better	JJR	0	ROOT
+better	JJR	0	root
 without	IN	10	case
 them	PRP	8	nmod
 
@@ -162,7 +162,7 @@ only	JJ	26	amod
 means	NNS	23	dobj
 of	IN	28	case
 defense	NN	26	nmod
-fell	VBD	0	ROOT
+fell	VBD	0	root
 an	DT	33	det
 easy	JJ	33	amod
 prey	NN	30	nsubj

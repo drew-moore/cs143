@@ -62,3 +62,28 @@ QuestionID: fables-01-13
 Question: How did the crow caw?     
 Difficulty: Medium
 Type: Sch
+
+QuestionID: fables-01-14
+Question: Who did the fox notice? 
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-01-15
+Question: Who observed the corvine bird?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-01-16
+Question: Who needed intelligence?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-01-17
+Question: Who was perched on a branch?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-01-18
+Question: Who felt buttered up?
+Difficulty: Hard
+Type: Sch

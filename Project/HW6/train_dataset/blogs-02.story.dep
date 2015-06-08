@@ -5,7 +5,7 @@ ago	RB	9	advmod
 a	DT	8	det
 young	JJ	8	amod
 man	NN	9	nsubj
-died	VBD	0	ROOT
+died	VBD	0	root
 out	RP	9	compound:prt
 on	IN	14	case
 my	PRP$	14	nmod:poss
@@ -20,7 +20,7 @@ motorbike	NN	17	dobj
 I	PRP	4	nsubj
 was	VBD	4	cop
 with	IN	4	case
-him	PRP	0	ROOT
+him	PRP	0	root
 in	IN	8	case
 his	PRP$	8	nmod:poss
 last	JJ	8	amod
@@ -53,7 +53,7 @@ where	WRB	11	advmod
 he	PRP	11	nsubj
 died	VBD	8	acl:relcl
 I	PRP	14	nsubj
-decided	VBD	0	ROOT
+decided	VBD	0	root
 to	TO	16	mark
 talk	VB	14	xcomp
 to	TO	18	case
@@ -82,7 +82,7 @@ him	PRP	38	dobj
 
 And	CC	3	cc
 I	PRP	3	nsubj
-know	VBP	0	ROOT
+know	VBP	0	root
 this	DT	5	nsubj
 sounds	VBZ	3	ccomp
 crazy	JJ	5	xcomp
@@ -104,7 +104,7 @@ first	RB	7	advcl
 my	PRP$	6	nmod:poss
 logical	JJ	6	amod
 mind	NN	7	nsubj
-thought	VBD	0	ROOT
+thought	VBD	0	root
 that	IN	12	mark
 it	PRP	12	nsubj
 was	VBD	12	cop
@@ -140,7 +140,7 @@ was	VBD	44	aux
 snoring	VBG	7	ccomp
 
 Lol	NN	2	nsubj
-could	MD	0	ROOT
+could	MD	0	root
 this	DT	2	dobj
 have	VB	5	aux
 been	VBN	2	dep
@@ -157,5 +157,5 @@ first	JJ	6	amod
 weird	JJ	6	amod
 experience	NN	6	compound
 ive	NN	7	nsubj
-had	VBD	0	ROOT
+had	VBD	0	root
 

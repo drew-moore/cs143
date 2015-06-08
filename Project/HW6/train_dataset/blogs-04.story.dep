@@ -1,6 +1,6 @@
 This	DT	3	nsubj
 is	VBZ	3	cop
-one	CD	0	ROOT
+one	CD	0	root
 of	IN	6	case
 those	DT	6	det
 times	NNS	3	nmod
@@ -13,7 +13,7 @@ digital	JJ	13	amod
 camera	NN	10	dobj
 
 We	PRP	2	nsubj
-keep	VBP	0	ROOT
+keep	VBP	0	root
 a	DT	7	det
 large	JJ	7	amod
 stainless	JJ	7	amod
@@ -41,7 +41,7 @@ outside	RB	24	advmod
 His	PRP$	2	nmod:poss
 bowl	NN	4	nsubj
 has	VBZ	4	aux
-become	VBN	0	ROOT
+become	VBN	0	root
 a	DT	8	det
 very	RB	7	advmod
 popular	JJ	8	amod
@@ -52,7 +52,7 @@ the	DT	3	det
 day	NN	7	nmod
 many	JJ	6	amod
 birds	NNS	7	nsubj
-drink	VBP	0	ROOT
+drink	VBP	0	root
 out	IN	7	compound:prt
 of	IN	10	case
 it	PRP	7	dep
@@ -64,7 +64,7 @@ it	PRP	12	nmod
 The	DT	2	det
 birds	NNS	4	nsubj
 literally	RB	4	advmod
-line	VBP	0	ROOT
+line	VBP	0	root
 up	RP	4	compound:prt
 on	IN	8	case
 the	DT	8	det
@@ -76,7 +76,7 @@ turn	NN	10	dobj
 
 Squirrels	NNS	3	nsubj
 also	RB	3	advmod
-come	VBP	0	ROOT
+come	VBP	0	root
 to	TO	5	mark
 drink	VB	3	xcomp
 out	IN	5	compound:prt
@@ -87,7 +87,7 @@ The	DT	3	det
 craziest	JJS	3	amod
 squirrel	NN	5	nsubj
 just	RB	5	advmod
-came	VBD	0	ROOT
+came	VBD	0	root
 by	IN	5	nmod
 he	PRP	11	nsubj
 was	VBD	11	aux
@@ -109,7 +109,7 @@ bowl	NN	21	nmod
 
 He	PRP	3	nsubjpass
 was	VBD	3	auxpass
-startled	VBN	0	ROOT
+startled	VBN	0	root
 so	RB	5	advmod
 much	RB	3	advmod
 at	IN	8	case
@@ -131,7 +131,7 @@ But	CC	6	cc
 not	RB	3	dep
 quite	RB	6	advmod
 I	PRP	6	nsubj
-saw	VBD	0	ROOT
+saw	VBD	0	root
 his	PRP$	10	nmod:poss
 one	CD	10	nummod
 little	JJ	10	amod
@@ -146,7 +146,7 @@ or	CC	3	cc
 two	CD	3	conj
 his	PRP$	7	nmod:poss
 paw	NN	8	nsubj
-slipped	VBD	0	ROOT
+slipped	VBD	0	root
 and	CC	8	cc
 he	PRP	11	nsubj
 tumbled	VBD	8	conj
@@ -161,7 +161,7 @@ if	IN	8	dep
 you	PRP	8	nsubj
 could	MD	8	aux
 have	VB	8	aux
-seen	VBN	0	ROOT
+seen	VBN	0	root
 the	DT	10	det
 look	NN	8	dobj
 on	IN	14	case

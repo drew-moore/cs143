@@ -1,7 +1,7 @@
 A	DT	2	det
 Crow	NN	4	nsubj
 was	VBD	4	aux
-sitting	VBG	0	ROOT
+sitting	VBG	0	root
 on	IN	7	case
 a	DT	7	det
 branch	NN	4	nmod
@@ -43,7 +43,7 @@ under	IN	6	case
 the	DT	6	det
 tree	NN	1	nmod
 he	PRP	8	nsubj
-looked	VBD	0	ROOT
+looked	VBD	0	root
 up	RP	8	compound:prt
 and	CC	8	cc
 said	VBD	8	conj
@@ -66,7 +66,7 @@ hue	NN	12	nsubj
 of	IN	11	case
 her	PRP$	11	nmod:poss
 plumage	NN	8	nmod
-exquisite	JJ	0	ROOT
+exquisite	JJ	0	root
 
 If	IN	7	mark
 only	RB	7	advmod
@@ -81,7 +81,7 @@ looks	NNS	12	nsubj
 are	VBP	12	cop
 fair	JJ	7	advcl
 she	PRP	15	nsubj
-ought	MD	0	ROOT
+ought	MD	0	root
 without	IN	17	case
 doubt	NN	20	nmod
 to	TO	20	mark
@@ -95,7 +95,7 @@ The	DT	2	det
 Crow	NNP	5	nsubjpass
 was	VBD	5	auxpass
 hugely	RB	5	advmod
-flattered	VBN	0	ROOT
+flattered	VBN	0	root
 by	IN	7	case
 this	DT	5	nmod
 and	CC	5	cc
@@ -115,7 +115,7 @@ loud	JJ	23	amod
 caw	NN	20	dobj
 
 Down	NN	2	nsubj
-came	VBD	0	ROOT
+came	VBD	0	root
 the	DT	4	det
 cheese	NN	2	dobj
 of	IN	7	case

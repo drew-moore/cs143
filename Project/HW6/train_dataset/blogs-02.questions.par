@@ -8,7 +8,7 @@ QuestionId: blogs-02-11
 (ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NN narrator)) (VP (VB begin) (S (VP (TO to) (VP (VB wonder)))))) (. ?)))
 
 QuestionId: blogs-02-12
-(ROOT (FRAG (WHNP (WDT What)) (PP (IN in) (NP (NP (DT a) (NN group)) (PP (IN of) (NP (NP (NNS trees)) (SBAR (WHNP (WDT that)) (S (VP (VBD was) (PP (IN above) (NP (DT the) (NN narrator))))))))) (. ?))))
+(ROOT (SBARQ (WHNP (WP What)) (SQ (VP (VBD was) (PP (IN in) (NP (NP (DT a) (NN group)) (PP (IN of) (NP (NP (NNS trees)) (SBAR (WHNP (WDT that)) (S (VP (VBD was) (PP (IN above) (NP (DT the) (NN narrator)))))))))))) (. ?)))
 
 QuestionId: blogs-02-13
 (ROOT (SBARQ (WHADVP (WRB When)) (SQ (VBD did) (NP (DT the) (JJ young) (NN man)) (VP (VB die))) (. ?)))
@@ -22,8 +22,20 @@ QuestionId: blogs-02-15
 QuestionId: blogs-02-16
 (ROOT (SBARQ (WHNP (WP Who)) (SQ (VP (VBD decided) (S (VP (TO to) (VP (VB talk) (PP (TO to) (NP (DT the) (JJ young) (NN man)))))))) (. ?)))
 
+QuestionId: blogs-02-17
+(ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NN narrator)) (VP (VB go) (PP (IN into)))) (. ?)))
+
+QuestionId: blogs-02-18
+(ROOT (SBARQ (WHNP (WP Who)) (SQ (VBD was) (VP (VBG catching) (S (NP (DT some) (NN Z) (POS 's))))) (. ?)))
+
+QuestionId: blogs-02-19
+(ROOT (SBARQ (WHNP (WP Who)) (SQ (VP (VBD walked) (PP (IN in) (NP (NP (DT the) (NN house)) (PP (IN of) (NP (DT the) (NN narrator))))))) (. ?)))
+
 QuestionId: blogs-02-2
 (ROOT (SBARQ (WHADVP (WRB Where)) (SQ (VBD did) (NP (DT the) (JJ young) (NN man)) (VP (VB die))) (. ?)))
+
+QuestionId: blogs-02-20
+(ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NN narrator)) (VP (VB perceive))) (. ?)))
 
 QuestionId: blogs-02-3
 (ROOT (SBARQ (WHNP (WP Who)) (SQ (VP (VBD visited) (NP (DT the) (NN place)) (SBAR (WHADVP (WRB where)) (S (NP (PRP he)) (VP (VBD died)))))) (. ?)))

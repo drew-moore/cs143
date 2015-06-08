@@ -87,3 +87,33 @@ QuestionID: blogs-01-18
 Question: Why were the police in full riot gear?
 Difficulty: Medium
 Type: Story
+
+QuestionID: blogs-01-19
+Question: Who blasted tear gas?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-01-20
+Question: Who created disorder?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-01-21
+Question: Who fired a chemical weapon?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-01-22
+Question: Who revolted?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-01-23
+Question: What combusted?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-01-24
+Question: Who was a slug fired at?
+Difficulty: Hard
+Type: Sch

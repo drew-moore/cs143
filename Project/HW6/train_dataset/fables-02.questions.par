@@ -1,11 +1,11 @@
 QuestionId: fables-02-1
-(ROOT (SBARQ (WHNP (WP Who)) (SQ (VBD was) (NP (NP (VBG feeding)) (PP (IN in) (NP (DT a) (NN meadow))))) (. ?)))
+(ROOT (SBARQ (WHNP (WP Who)) (SQ (VBD was) (VP (VBG feeding) (PP (IN in) (NP (DT a) (NN meadow))))) (. ?)))
 
 QuestionId: fables-02-10
-(ROOT (SBARQ (WHADVP (WRB Why)) (SQ (VBD did) (RB not) (NP (DT the) (NN lion) (NN attack))) (FRAG (X (DT the)) (NP (NN bull))) (. ?)))
+(ROOT (SBARQ (WHADVP (WRB Why)) (SQ (VBD did) (RB not) (NP (DT the) (NN lion)) (VP (VB attack) (NP (DT the) (NN bull)))) (. ?)))
 
 QuestionId: fables-02-11
-(ROOT (SBARQ (WHNP (WP What)) (SQ (VP (VBD did) (NP (DT the) (NN lion) (NN fear)))) (. ?)))
+(ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NN lion)) (VP (VB fear))) (. ?)))
 
 QuestionId: fables-02-12
 (ROOT (SBARQ (WHNP (WP What)) (SQ (VBZ is) (ADJP (JJ ugly))) (. ?)))
@@ -28,8 +28,23 @@ QuestionId: fables-02-17
 QuestionId: fables-02-18
 (ROOT (SBARQ (WHNP (WP Who)) (SQ (VP (VBZ has) (NP (NNS horns)))) (. ?)))
 
+QuestionId: fables-02-19
+(ROOT (SBARQ (WHNP (WP Who)) (SQ (VBD did) (NP (DT the) (JJ big) (NN cat)) (VP (VB witness))) (. ?)))
+
 QuestionId: fables-02-2
 (ROOT (SBARQ (WHNP (WP Who)) (SQ (VBD was) (VP (VBN persuaded) (PP (IN by) (NP (DT this) (NN flattery))))) (. ?)))
+
+QuestionId: fables-02-20
+(ROOT (SBARQ (WHADVP (WRB Why)) (SQ (VBD did) (RB not) (NP (DT the) (NN lion)) (VP (VB strike) (NP (DT the) (NN bull)))) (. ?)))
+
+QuestionId: fables-02-21
+(ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NN lion)) (VP (VB gobble))) (. ?)))
+
+QuestionId: fables-02-22
+(ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NN lion)) (VP (VB consume))) (. ?)))
+
+QuestionId: fables-02-23
+(ROOT (SBARQ (WHNP (WP Who)) (SQ (VP (VBD tried) (S (VP (TO to) (VP (VB kill) (NP (DT the) (NN bull))))))) (. ?)))
 
 QuestionId: fables-02-3
 (ROOT (SBARQ (WHADVP (WRB Where)) (SQ (VBD was) (NP (DT the) (NN bull))) (. ?)))
@@ -51,5 +66,4 @@ QuestionId: fables-02-8
 
 QuestionId: fables-02-9
 (ROOT (SBARQ (WHNP (WP What)) (SQ (VBD did) (NP (DT the) (NN lion)) (VP (VB want))) (. ?)))
-
 

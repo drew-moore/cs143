@@ -1,6 +1,6 @@
 A	DT	2	det
 Fox	NNP	3	nsubj
-invited	VBD	0	ROOT
+invited	VBD	0	root
 a	DT	5	det
 Stork	NNP	3	dobj
 to	TO	7	case
@@ -21,7 +21,7 @@ soup	NN	19	nmod
 
 The	DT	2	det
 Fox	NNP	3	nsubj
-lapped	VBD	0	ROOT
+lapped	VBD	0	root
 it	PRP	3	dobj
 up	RP	3	compound:prt
 with	IN	8	case
@@ -47,7 +47,7 @@ broth	NN	21	nmod
 Her	PRP$	3	nmod:poss
 evident	JJ	3	amod
 distress	NN	4	nsubj
-caused	VBD	0	ROOT
+caused	VBD	0	root
 the	DT	9	det
 sly	JJ	9	amod
 Fox	NNP	9	compound
@@ -60,7 +60,7 @@ long	RB	7	advmod
 after	IN	6	case
 the	DT	6	det
 Stork	NNP	7	nmod
-invited	VBD	0	ROOT
+invited	VBD	0	root
 him	PRP	7	dobj
 in	IN	10	case
 turn	NN	7	nmod
@@ -94,7 +94,7 @@ her	PRP$	7	nmod:poss
 dinner	NN	5	dobj
 the	DT	10	det
 Fox	NNP	11	nsubj
-sat	VBD	0	ROOT
+sat	VBD	0	root
 by	IN	13	case
 hungry	JJ	11	advcl
 and	CC	13	cc

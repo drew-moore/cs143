@@ -216,6 +216,8 @@ class DepGraph:
     def dep_types(self, node):
         return [rel for rel in node['deps']]
 
+    def get_sentence(self):
+        return  nltk.pos_tag(nltk.word_tokenize(self.print_sentence()))
     def node_at_idx(self, idx):
         for node in self.graph.nodes.values():
             if node['address'] == idx:

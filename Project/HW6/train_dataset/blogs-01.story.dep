@@ -4,19 +4,19 @@ a	DT	7	det
 very	RB	5	advmod
 eventful	JJ	7	amod
 work	NN	7	compound
-day	NN	0	ROOT
+day	NN	0	root
 
 Today	NN	4	nsubj
 was	VBD	4	cop
 the	DT	4	det
-start	NN	0	ROOT
+start	NN	0	root
 of	IN	8	case
 the	DT	8	det
 G20	NN	8	compound
 summit	NN	4	nmod
 
 It	PRP	2	nsubj
-happens	VBZ	0	ROOT
+happens	VBZ	0	root
 every	DT	4	det
 year	NN	2	nmod:tmod
 and	CC	2	cc
@@ -55,7 +55,7 @@ coming	VBG	11	advcl
 together	RB	7	advmod
 their	PRP$	11	nsubj
 are	VBP	11	aux
-going	VBG	0	ROOT
+going	VBG	0	root
 to	TO	15	mark
 be	VB	15	cop
 a	DT	15	det
@@ -79,7 +79,7 @@ they	PRP	32	nsubj
 protest	VBP	29	advcl
 
 There	EX	2	expl
-was	VBD	0	ROOT
+was	VBD	0	root
 a	DT	4	det
 protest	NN	2	nsubj
 that	WDT	6	nsubj
@@ -111,7 +111,7 @@ riot	NN	25	dobj
 Police	NNP	2	compound
 cars	NNS	4	nsubjpass
 were	VBD	4	auxpass
-burned	VBN	0	ROOT
+burned	VBN	0	root
 and	CC	4	cc
 things	NNS	8	nsubjpass
 were	VBD	8	auxpass
@@ -124,30 +124,30 @@ were	VBD	6	cop
 in	IN	6	case
 full	JJ	6	amod
 riot	NN	6	compound
-gear	NN	0	ROOT
+gear	NN	0	root
 to	TO	8	mark
 alleviate	VB	6	xcomp
 the	DT	10	det
 violence	NN	8	dobj
 
-As	IN	4	mark
-things	NNS	4	nsubj
-got	VBD	4	dep
-worse	JJR	5	csubj
-tear	VB	0	ROOT
-gas	NN	10	compound
+As	IN	3	mark
+things	NNS	3	nsubj
+got	VBD	12	advcl
+worse	JJR	3	xcomp
+tear	JJ	6	amod
+gas	NN	12	nsubjpass
 and	CC	6	cc
-bean	NN	6	conj
+bean	NN	10	compound
 bag	NN	10	compound
-bullets	NNS	12	nsubjpass
+bullets	NNS	6	conj
 were	VBD	12	auxpass
-fired	VBN	5	ccomp
+fired	VBN	0	root
 at	IN	15	case
 the	DT	15	det
 rioters	NNS	12	nmod
 while	IN	18	mark
 they	PRP	18	nsubj
-smash	VBP	12	advcl
+smash	VB	12	advcl
 windows	NNS	18	dobj
 of	IN	21	case
 stores	NNS	19	nmod
@@ -155,7 +155,7 @@ stores	NNS	19	nmod
 And	CC	4	cc
 this	DT	4	nsubj
 all	DT	4	advmod
-happened	VBD	0	ROOT
+happened	VBD	0	root
 right	RB	4	advmod
 in	IN	7	case
 front	NN	4	nmod

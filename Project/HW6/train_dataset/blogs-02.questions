@@ -54,7 +54,7 @@ Difficulty: Easy
 Type: Sch
 
 QuestionID: blogs-02-12
-Question: What in a group of trees that was above the narrator?
+Question: What was in a group of trees that was above the narrator?
 Difficulty: Easy
 Type: Sch
 
@@ -76,4 +76,24 @@ Type: Sch
 QuestionID: blogs-02-16
 Question: Who decided to talk to the young man? 
 Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-02-17
+Question: What did the narrator go into?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-02-18
+Question: Who was catching some Zs?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-02-19
+Question: Who walked in the house of the narrator?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-02-20
+Question: What did the narrator perceive? 
+Difficulty: Hard
 Type: Sch

@@ -87,3 +87,28 @@ QuestionID: fables-02-18
 Question: Who has horns? 
 Difficulty: Medium
 Type: Sch
+
+QuestionID: fables-02-19
+Question: Who did the big cat witness?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-02-20
+Question: Why did not the lion strike the bull?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-02-21
+Question: What did the lion gobble?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-02-22
+Question: What did the lion consume?
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-02-23
+Question: Who tried to kill the bull?
+Difficulty: Hard
+Type: Sch

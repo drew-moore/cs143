@@ -75,3 +75,27 @@ Question: What was the soup served in?
 Answer: a flat and large dish
 Difficulty: Medium
 Type: Sch
+
+QuestionID: fables-04-14
+Question: Who tried to drink some savory broth and failed?
+Answer: the stork
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-04-15
+Question: Who tried to drink some savory stock?
+Answer: The stork
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-04-16
+Question: What did the canine serve?
+Answer: some soup in a flat and large dish
+Difficulty: Hard
+Type: Sch
+
+QuestionID: fables-04-17
+Question: Who attempted to drink some savory soup?
+Answer: The stork
+Difficulty: Hard
+Type: Sch

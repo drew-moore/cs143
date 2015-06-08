@@ -65,7 +65,7 @@ Difficulty: Easy
 Type: Sch
 
 QuestionID: blogs-02-12
-Question: What in a group of trees that was above the narrator?
+Question: What was in a group of trees that was above the narrator?
 Answer: some bright flash 
 Difficulty: Easy
 Type: Sch
@@ -92,4 +92,28 @@ QuestionID: blogs-02-16
 Question: Who decided to talk to the young man? 
 Answer: the narrator
 Difficulty: Medium
+Type: Sch
+
+QuestionID: blogs-02-17
+Question: What did the narrator go into?
+Answer: the house of the narrator
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-02-18
+Question: Who was catching some Zs?
+Answer: The family of the narrator
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-02-19
+Question: Who walked in the house of the narrator?
+Answer: The narrator
+Difficulty: Hard
+Type: Sch
+
+QuestionID: blogs-02-20
+Question: What did the narrator perceive? 
+Answer: Some bright flash
+Difficulty: Hard
 Type: Sch

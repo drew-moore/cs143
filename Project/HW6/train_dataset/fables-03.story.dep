@@ -1,6 +1,6 @@
 An	DT	2	det
 Eagle	NNP	3	nsubj
-swooped	VBD	0	ROOT
+swooped	VBD	0	root
 down	RP	3	compound:prt
 upon	IN	7	case
 a	DT	7	det
@@ -27,7 +27,7 @@ the	DT	3	det
 Serpent	NNP	6	nsubj
 was	VBD	6	cop
 too	RB	6	advmod
-quick	JJ	0	ROOT
+quick	JJ	0	root
 for	IN	8	case
 him	PRP	6	nmod
 and	CC	6	cc
@@ -59,7 +59,7 @@ witness	NN	2	acl:relcl
 of	IN	10	case
 the	DT	10	det
 encounter	NN	7	nmod
-came	VBD	0	ROOT
+came	VBD	0	root
 to	TO	15	case
 the	DT	15	det
 assistance	NN	12	nmod
@@ -81,7 +81,7 @@ to	TO	32	mark
 escape	VB	29	xcomp
 
 In	IN	2	case
-revenge	NN	0	ROOT
+revenge	NN	0	root
 the	DT	5	det
 Serpent	NNP	5	compound
 spat	NN	2	acl:relcl
@@ -102,7 +102,7 @@ exertions	NNS	1	nmod
 the	DT	7	det
 man	NN	9	nsubj
 was	VBD	9	aux
-about	IN	0	ROOT
+about	IN	0	root
 to	TO	11	mark
 slake	VB	9	xcomp
 his	PRP$	13	nmod:poss

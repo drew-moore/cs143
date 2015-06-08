@@ -1,21 +1,21 @@
 There	EX	3	expl
 once	RB	3	advmod
-was	VBD	0	ROOT
+was	VBD	0	root
 a	DT	6	det
 fat	JJ	6	amod
 bull	NN	3	nsubj
 
 The	DT	2	det
 bull	NN	4	nsubj
-was	VBD	4	cop
-grazing	NN	0	ROOT
+was	VBD	4	aux
+grazing	VBG	0	root
 in	IN	7	case
 a	DT	7	det
 meadow	NN	4	nmod
 
 A	DT	2	det
 lion	NN	3	nsubj
-watched	VBD	0	ROOT
+watched	VBD	0	root
 the	DT	5	det
 bull	NN	3	dobj
 and	CC	3	cc
@@ -33,7 +33,7 @@ The	DT	2	det
 lion	NN	5	nsubj
 did	VBD	5	aux
 n't	RB	5	neg
-attack	VB	0	ROOT
+attack	VB	0	root
 the	DT	7	det
 bull	NN	5	dobj
 because	IN	11	mark
@@ -49,7 +49,7 @@ bull	NN	14	nmod
 
 The	DT	2	det
 lion	NN	3	nsubj
-began	VBD	0	ROOT
+began	VBD	0	root
 to	TO	6	mark
 be	VB	6	cop
 hungry	JJ	3	xcomp
@@ -64,7 +64,7 @@ bull	NN	12	dobj
 
 The	DT	2	det
 lion	NN	3	nsubj
-planned	VBD	0	ROOT
+planned	VBD	0	root
 to	TO	5	mark
 trick	VB	3	xcomp
 the	DT	7	det
@@ -82,7 +82,7 @@ bull	NN	15	dobj
 
 The	DT	2	det
 lion	NN	3	nsubj
-walked	VBD	0	ROOT
+walked	VBD	0	root
 toward	IN	6	case
 the	DT	6	det
 bull	NN	3	nmod
@@ -118,7 +118,7 @@ of	IN	22	case
 the	DT	22	det
 bull	NN	19	nmod
 he	PRP	25	nsubj
-admired	VBD	0	ROOT
+admired	VBD	0	root
 every	DT	27	det
 shoulder	NN	25	dobj
 of	IN	30	case
@@ -134,7 +134,7 @@ bull	NN	34	nmod
 
 The	DT	2	det
 lion	NN	3	nsubj
-advised	VBD	0	ROOT
+advised	VBD	0	root
 the	DT	5	det
 bull	NN	3	dobj
 to	TO	7	mark
@@ -155,7 +155,7 @@ ugly	JJ	7	advcl
 
 The	DT	2	det
 lion	NN	3	nsubj
-succeeded	VBD	0	ROOT
+succeeded	VBD	0	root
 in	IN	5	mark
 persuading	VBG	3	advcl
 the	DT	7	det
@@ -170,7 +170,7 @@ bull	NN	11	nmod
 
 The	DT	2	det
 lion	NN	3	nsubj
-ate	VBD	0	ROOT
+ate	VBD	0	root
 the	DT	5	det
 bull	NN	3	dobj
 and	CC	3	cc

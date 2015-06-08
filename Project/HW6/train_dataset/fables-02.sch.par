@@ -1,5 +1,5 @@
 (ROOT (S (NP (EX There)) (ADVP (RB once)) (VP (VBD was) (NP (DT a) (JJ fat) (NN bull))) (. .)))
-(ROOT (S (NP (DT The) (NN bull)) (VP (VBD was) (NP (NP (NN grazing)) (PP (IN in) (NP (DT a) (NN meadow))))) (. .)))
+(ROOT (S (NP (DT The) (NN bull)) (VP (VBD was) (VP (VBG grazing) (PP (IN in) (NP (DT a) (NN meadow))))) (. .)))
 (ROOT (S (NP (DT A) (NN lion)) (VP (VP (VBD watched) (NP (DT the) (NN bull))) (CC and) (VP (VBD salivated) (SBAR (IN because) (S (NP (DT the) (NN lion)) (VP (VBD wanted) (S (VP (TO to) (VP (VB eat) (NP (DT the) (NN bull)))))))))) (. .)))
 (ROOT (S (NP (DT The) (NN lion)) (VP (VBD did) (RB n't) (VP (VB attack) (NP (DT the) (NN bull)) (SBAR (IN because) (S (NP (DT the) (NN lion)) (VP (VBD feared) (NP (NP (JJ sharp) (DT every) (NN horn)) (PP (IN of) (NP (DT the) (NN bull))))))))) (. .)))
 (ROOT (S (NP (DT The) (NN lion)) (VP (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (JJ hungry)))))) (CC and) (VP (VBD decided) (S (VP (TO to) (VP (VB attempt) (S (VP (TO to) (VP (VB kill) (NP (DT the) (NN bull)))))))))) (. .)))

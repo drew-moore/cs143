@@ -1,14 +1,14 @@
 Louisiana	NNP	4	nsubjpass
 was	VBD	4	auxpass
 adversely	RB	4	advmod
-affected	VBN	0	ROOT
+affected	VBN	0	root
 by	IN	7	case
 Hurricane	NNP	7	compound
 Gustav	NNP	4	nmod
 
 I	PRP	3	nsubj
 've	VBP	3	aux
-added	VBN	0	ROOT
+added	VBN	0	root
 information	NN	3	dobj
 to	TO	9	case
 the	DT	9	det
@@ -29,7 +29,7 @@ relief	NN	16	dobj
 Here	RB	4	nsubj
 's	VBZ	4	cop
 what	WP	4	nsubj
-happened	VBD	0	ROOT
+happened	VBD	0	root
 to	TO	6	case
 me	PRP	4	nmod
 and	CC	4	cc
@@ -54,7 +54,7 @@ local	JJ	27	amod
 news	NN	24	conj
 
 I	PRP	2	nsubj
-went	VBD	0	ROOT
+went	VBD	0	root
 to	TO	5	case
 Home	NNP	5	compound
 Depot	NNP	2	nmod
@@ -71,7 +71,7 @@ portable	JJ	16	amod
 generator	NN	13	dobj
 
 I	PRP	2	nsubj
-filled	VBD	0	ROOT
+filled	VBD	0	root
 up	RP	2	compound:prt
 my	PRP$	6	nmod:poss
 three	CD	6	nummod
@@ -87,7 +87,7 @@ of	IN	15	case
 gasoline	NN	13	nmod
 
 We	PRP	2	nsubj
-purchased	VBD	0	ROOT
+purchased	VBD	0	root
 supplies	NNS	2	dobj
 to	TO	5	mark
 last	VB	2	advcl
@@ -108,14 +108,14 @@ coast	NN	6	dep
 I	PRP	14	nsubj
 was	VBD	14	aux
 n't	RB	14	neg
-expecting	VBG	0	ROOT
+expecting	VBG	0	root
 too	RB	16	advmod
 much	JJ	17	amod
 damage	NN	14	dobj
 
 The	DT	2	det
 storm	NN	3	nsubj
-rolled	VBD	0	ROOT
+rolled	VBD	0	root
 in	IN	6	case
 on	IN	6	case
 Monday	NNP	3	nmod
@@ -126,20 +126,20 @@ the	DT	13	det
 morning	NN	3	nmod
 
 Power	NNP	2	nsubj
-went	VBD	0	ROOT
+went	VBD	0	root
 out	RP	2	compound:prt
 about	IN	5	case
 11:00	CD	2	nmod
 am	RB	5	advmod
 
 Winds	NNS	2	nsubj
-started	VBD	0	ROOT
+started	VBD	0	root
 kicking	VBG	2	xcomp
 up	RP	3	compound:prt
 
 We	PRP	3	nsubjpass
 were	VBD	3	auxpass
-told	VBN	0	ROOT
+told	VBN	0	root
 our	PRP$	5	nmod:poss
 area	NN	7	nsubj
 would	MD	7	aux
@@ -150,7 +150,7 @@ about	RB	11	advmod
 50mph	JJ	8	acl
 
 I	PRP	2	nsubj
-live	VBP	0	ROOT
+live	VBP	0	root
 in	IN	5	case
 an	DT	5	det
 area	NN	2	nmod
@@ -170,7 +170,7 @@ About	IN	3	case
 pm	NN	7	nmod
 I	PRP	7	nsubj
 was	VBD	7	aux
-standing	VBG	0	ROOT
+standing	VBG	0	root
 on	IN	11	case
 my	PRP$	11	nmod:poss
 back	JJ	11	amod
@@ -193,7 +193,7 @@ neighbor	NN	27	nmod:poss
 yard	NN	22	nmod
 
 I	PRP	2	nsubj
-started	VBD	0	ROOT
+started	VBD	0	root
 to	TO	5	mark
 get	VB	5	dep
 nervous	JJ	2	xcomp
@@ -238,7 +238,7 @@ children	NNS	2	appos
 and	CC	6	cc
 our	PRP$	10	nmod:poss
 dog	NN	6	conj
-stayed	VBD	0	ROOT
+stayed	VBD	0	root
 in	IN	15	case
 an	DT	15	det
 area	NN	12	nmod
@@ -252,13 +252,13 @@ safest	JJS	21	dobj
 
 Then	RB	4	advmod
 I	PRP	4	nsubj
-heard	VBD	0	ROOT
+heard	VBD	0	root
 a	DT	7	det
 large	JJ	7	amod
 crash	NN	4	dobj
 
 I	PRP	2	nsubj
-looked	VBD	0	ROOT
+looked	VBD	0	root
 out	RP	2	compound:prt
 my	PRP$	6	nmod:poss
 front	NN	6	compound
@@ -286,14 +286,14 @@ RV	NN	21	nmod
 
 Trees	NNP	3	nsubj
 were	VBD	3	aux
-dropping	VBG	0	ROOT
+dropping	VBG	0	root
 all	DT	3	dobj
 around	IN	6	case
 us	PRP	4	nmod
 
 Another	DT	2	det
 tree	NN	3	nsubj
-fell	VBD	0	ROOT
+fell	VBD	0	root
 on	IN	8	case
 my	PRP$	8	nmod:poss
 riding	VBG	8	amod
@@ -307,7 +307,7 @@ cart	NN	8	conj
 Fortunately	RB	5	advmod
 no	DT	4	neg
 trees	NNS	5	nsubj
-fell	VBD	0	ROOT
+fell	VBD	0	root
 on	IN	8	case
 my	PRP$	8	nmod:poss
 house	NN	5	nmod
@@ -319,11 +319,11 @@ neighbors	NNS	1	nmod
 were	VBD	8	cop
 not	RB	8	neg
 so	RB	8	advmod
-fortunate	JJ	0	ROOT
+fortunate	JJ	0	root
 
 President	NNP	2	compound
 Bush	NNP	3	nsubj
-came	VBD	0	ROOT
+came	VBD	0	root
 to	TO	6	case
 Baton	NNP	6	compound
 Rouge	NNP	3	nmod
@@ -334,7 +334,7 @@ the	DT	11	det
 damage	NN	9	dobj
 
 I	PRP	2	nsubj
-have	VBP	0	ROOT
+have	VBP	0	root
 three	CD	5	nummod
 good	JJ	5	amod
 friends	NNS	2	dobj
@@ -363,7 +363,7 @@ It	PRP	5	nsubjpass
 's	VBZ	5	auxpass
 been	VBN	5	cop
 three	CD	5	nummod
-days	NNS	0	ROOT
+days	NNS	0	root
 since	IN	8	case
 the	DT	8	det
 storm	NN	5	nmod
@@ -392,7 +392,7 @@ new	JJ	6	amod
 generator	NN	9	nsubj
 does	VBZ	9	aux
 not	RB	9	neg
-work	VB	0	ROOT
+work	VB	0	root
 I	PRP	12	nsubj
 brought	VBD	9	parataxis
 it	PRP	12	dobj
@@ -405,7 +405,7 @@ my	PRP$	4	nmod:poss
 parents	NNS	6	nmod:poss
 '	POS	4	case
 house	NN	7	nsubj
-had	VBD	0	ROOT
+had	VBD	0	root
 electricity	NN	7	dobj
 restored	VBD	8	acl:relcl
 the	DT	11	det
@@ -434,7 +434,7 @@ restored	VBN	20	advcl
 
 There	EX	3	expl
 are	VBP	3	auxpass
-downed	VBD	0	ROOT
+downed	VBD	0	root
 trees	NNS	3	dobj
 and	CC	4	cc
 power	NN	7	compound
