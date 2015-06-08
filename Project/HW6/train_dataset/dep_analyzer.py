@@ -6,13 +6,13 @@ from nltk.parse import DependencyGraph
 import nltk
 from nltk.stem.wordnet import WordNetLemmatizer
 from DepGraphADT import DepGraph
-import wordnet_demo as wnd
+import disambiguator
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
 
 stopwords = set(nltk.corpus.stopwords.words("english"))
 
-wnd.initialize()
+disambiguator.initialize()
 lmtzr = WordNetLemmatizer()
 # Read the lines of an individual dependency parse
 
@@ -123,11 +123,11 @@ def baseline_disambig(qgraph, sgraphs):
     if len(results) == 1:
         return orig_order[results[0]]
     else:
-        qbow = get_bow(wnd.disambiguate(qgraph.get_sentence()), stopwords)
+        qbow = get_bow(disambiguator.disambiguate(qgraph.get_sentence()), stopwords)
         d_answers = []
         for sgraph in sgraphs:
             # A list of all the word tokens in the sentence
-            sbow = get_bow(wnd.disambiguate(sgraph.get_sentence()), stopwords)
+            sbow = get_bow(disambiguator.disambiguate(sgraph.get_sentence()), stopwords)
 
             # Count the # of overlapping words between the Q and the A
             # & is the set intersection operator
@@ -203,8 +203,8 @@ def subj_pred_disamb(qgraph, sgraphs):
     q_subj = qgraph.get_subject()
     q_pred = qgraph.get_predicate()
     if q_subj is not None:
-        q_subj_hyper = wnd.get_noun_hypernym(q_subj['word'])
-        q_pred_hyper = wnd.get_verb_hypernym(q_pred['word'])
+        q_subj_hyper = disambiguator.get_noun_hypernym(q_subj['word'])
+        q_pred_hyper = disambiguator.get_verb_hypernym(q_pred['word'])
         if q_subj_hyper and q_pred_hyper:
             i = 3
     i = 3
