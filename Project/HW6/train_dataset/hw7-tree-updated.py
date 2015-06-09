@@ -61,7 +61,7 @@ def getQA(content, dataset_dict):
 
 def create_filename(parseCurrQID):
     currFileName = parseCurrQID[0] + "-" + parseCurrQID[1]
-    print(currFileName) 
+    #print(currFileName)
     currType = question[1]["Type"]
 
     if currType == "Story":
@@ -261,7 +261,7 @@ def where_question(tree, question_par):
 def when_question(tree):
     #pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
     #subtree = pattern_matcher(pattern, tree)
-    pattern = nltk.ParentedTree.fromstring("(PP (IN on))")
+    pattern = nltk.ParentedTree.fromstring("(PP (IN))")
     #subtree2 = pattern_matcher(pattern, subtree)
     subtree2 = pattern_matcher(pattern, tree)
     return(" ".join(subtree2.leaves()))
@@ -278,6 +278,19 @@ def why_question(tree):
             return(" ".join(subtree.leaves()))
         else:
             return(" ".join(tree.leaves()))
+
+def what_question(tree, question_par):
+    leaves = tree.leaves()
+    qleaves = question_par.leaves()
+    if 'do' in qleaves:
+        pattern = nltk.ParentedTree.fromstring("(VP)")
+        subtree = pattern_matcher(pattern, tree)
+        if subtree:
+            return(" ".join(subtree.leaves()))
+        else:
+            return(" ".join(tree.leaves()))
+    else:
+        return(" ".join(tree.leaves()))
 
 def responseTree(par_file, sentenceNum, questionCase, question_par):
     trees = read_con_parses(par_file)
@@ -314,7 +327,12 @@ def responseTree(par_file, sentenceNum, questionCase, question_par):
     elif questionCase == "What":
         ### different kinds of what questions ### 
         #nltk.ParentedTree.fromstring("(VP (*) (PP))")
-        return(" ".join(tree.leaves()))   
+        try:
+            ret = what_question(tree, question_par)
+            return ret
+        except AttributeError:
+            return(" ".join(tree.leaves()))
+
     elif questionCase == "Why":
         ### because & in order for, see the parser for more details ###
         try:
@@ -466,20 +484,20 @@ if __name__ == '__main__':
 
             parseCurrQID = question[0].split("-")
             currFileName = create_filename(parseCurrQID)
-            print(parseCurrQID)
+            #print(parseCurrQID)
             currQ = question[1]["Question"]
 
             answer_idx = find_answer(question[1]['dep_parse'], q_deps)
 
-            print(currQ)
+            #print(currQ)
             #print(answer)
             if answer_idx is None:
                finalAnswer = ""
-               print('no answer')
+               #print('no answer')
             else:
                 answer = q_sentences[answer_idx]
                 finalAnswer = " ".join(t[0] for t in answer)
-                print(finalAnswer)
+                #print(finalAnswer)
                 sent, index_sent = sentMacher(finalAnswer, q_text)
                 #print(sent)
                 #finalAnswer = sent
