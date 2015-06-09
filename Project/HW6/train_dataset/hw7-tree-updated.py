@@ -261,7 +261,7 @@ def where_question(tree, question_par):
 def when_question(tree):
     #pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
     #subtree = pattern_matcher(pattern, tree)
-    pattern = nltk.ParentedTree.fromstring("(PP (IN on))")
+    pattern = nltk.ParentedTree.fromstring("(PP (IN))")
     #subtree2 = pattern_matcher(pattern, subtree)
     subtree2 = pattern_matcher(pattern, tree)
     return(" ".join(subtree2.leaves()))
