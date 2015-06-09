@@ -76,6 +76,10 @@ class DepGraph:
                     return node
                 if 'rel' in node and node['rel'] == 'nsubjpass' and node['head'] == self.root['address']:
                     return node
+                if 'rel' in node and node['rel'] == 'dobj' and node['head'] == self.root['address']:
+                    return node
+                if 'rel' in node and node['rel'] == 'iobj' and node['head'] == self.root['address']:
+                    return node
         else:
             return self.root
 
@@ -89,6 +93,10 @@ class DepGraph:
             #for node in nodes, if nsubj in node.deps == address of root, return it
             #if 'nsubj' in graph.root['deps']:
             return None
+
+    def get_subject_clause(self):
+        snode = self.get_subject()
+        return self.get_dependents(snode, recurse=False)
 
     def get_dependents(self, node, recurse=True):
         results = []

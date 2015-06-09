@@ -257,7 +257,27 @@ def where_question(tree, question_par):
     #subtree2 = pattern_matcher(pattern, subtree)
     subtree2 = pattern_matcher(pattern, tree)
     return(" ".join(subtree2.leaves()))
-     
+
+def when_question(tree):
+    #pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
+    #subtree = pattern_matcher(pattern, tree)
+    pattern = nltk.ParentedTree.fromstring("(PP (IN on))")
+    #subtree2 = pattern_matcher(pattern, subtree)
+    subtree2 = pattern_matcher(pattern, tree)
+    return(" ".join(subtree2.leaves()))
+
+def why_question(tree):
+    leaves = tree.leaves()
+    if 'because' in leaves:
+        idx = leaves.index('because')
+        return ' '.join([leaf for leaf in leaves[idx:]])
+    else:
+        pattern = nltk.ParentedTree.fromstring("(VP (TO))")
+        subtree = pattern_matcher(pattern, tree)
+        if subtree:
+            return(" ".join(subtree.leaves()))
+        else:
+            return(" ".join(tree.leaves()))
 
 def responseTree(par_file, sentenceNum, questionCase, question_par):
     trees = read_con_parses(par_file)
@@ -282,15 +302,26 @@ def responseTree(par_file, sentenceNum, questionCase, question_par):
         except AttributeError:      
             return(" ".join(tree.leaves()))   
 
+    elif questionCase == "When":
+        try:
+            ret = when_question(tree)
+            return ret
+        except AttributeError:
+            return(" ".join(tree.leaves()))
+
+
+
     elif questionCase == "What":
         ### different kinds of what questions ### 
         #nltk.ParentedTree.fromstring("(VP (*) (PP))")
         return(" ".join(tree.leaves()))   
     elif questionCase == "Why":
         ### because & in order for, see the parser for more details ###
-
-        #nltk.ParentedTree.fromstring("(VP (*) (PP))")
-        return(" ".join(tree.leaves()))
+        try:
+            ret = why_question(tree)
+            return ret
+        except AttributeError:
+            return(" ".join(tree.leaves()))
     elif questionCase == "How":
         ### only one question: fables-01-13 ###
         #nltk.ParentedTree.fromstring("(VP (*) (PP))")
@@ -373,8 +404,8 @@ if __name__ == '__main__':
     # you can write your own methods; these are to help you get started
 
     filename = sys.argv[1]
-    file = open("answers-bl.txt", 'w', encoding="utf-8").close()
-    file = open("answers-bl.txt", 'a', encoding="utf-8")
+    file = open("answers-7.txt", 'w', encoding="utf-8").close()
+    file = open("answers-7.txt", 'a', encoding="utf-8")
 
     filesToParse = read_file(filename)
     filesList = filesToParse.split('\n')

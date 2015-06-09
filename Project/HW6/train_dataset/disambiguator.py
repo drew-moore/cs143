@@ -52,7 +52,8 @@ def get_noun_hypernym(word):
 
 def get_noun_hyponyms(word):
     ss = get_noun_synset(word)
-
+    if ss:
+        i = 3
 
 def get_verb_hypernym(word):
     ss = get_verb_synset(word)
@@ -61,6 +62,8 @@ def get_verb_hypernym(word):
             return ss.hypernyms()[0].name()
         else:
             return None
+
+
 
 def get_noun_synonyms(word):
     ss = get_noun_synset(word)
