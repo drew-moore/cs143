@@ -16,6 +16,7 @@ def read_file(filename):
     text = fh.read()
     fh.close()
 
+
     return text
 
 # This method takes as input the file extension of the set of files you want to open
